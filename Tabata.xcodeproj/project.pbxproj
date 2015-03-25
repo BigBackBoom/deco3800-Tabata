@@ -407,6 +407,7 @@
 				4DE3EE2C1ABA349000D7B6B2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4DE3EE2D1ABA349000D7B6B2 /* Build configuration list for PBXNativeTarget "TabataTests" */ = {
 			isa = XCConfigurationList;
@@ -415,6 +416,7 @@
 				4DE3EE2F1ABA349000D7B6B2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
