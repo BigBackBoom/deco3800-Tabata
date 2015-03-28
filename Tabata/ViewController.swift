@@ -15,7 +15,7 @@ class ViewController: UIViewController {
     @IBOutlet var timePicker: UIDatePicker!
     
     weak var timer: NSTimer!
-    var timerLabel = UILabel();
+    var timerLabel: UILabel!;
     var counter = 0
     
     override func viewDidLoad() {
@@ -29,6 +29,7 @@ class ViewController: UIViewController {
     
     @IBAction func starBtnPressed(){
         println(timePicker.countDownDuration)
+        timerLabel = UILabel();
         timerLabel.frame = CGRectMake(50, 150, 200, 21)
         timerLabel.backgroundColor = UIColor.orangeColor()
         timerLabel.textColor = UIColor.blackColor()
