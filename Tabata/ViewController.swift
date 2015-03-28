@@ -28,15 +28,21 @@ class ViewController: UIViewController {
     }
     
     @IBAction func starBtnPressed(){
-        println(timePicker.countDownDuration)
         timerLabel = UILabel();
         timerLabel.frame = CGRectMake(50, 150, 200, 21)
         timerLabel.backgroundColor = UIColor.orangeColor()
         timerLabel.textColor = UIColor.blackColor()
         timerLabel.textAlignment = NSTextAlignment.Center
-        timerLabel.text = "test label"
+        timerLabel.text = timerNotation(Int(timePicker.countDownDuration))
         self.view.addSubview(timerLabel)
-        //timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("timerIncrement"), userInfo: nil, repeats: false)
+        timePicker.removeFromSuperview()
+    }
+    
+    func timerNotation(time: Int) -> String{
+        var hour:Int = time/3600
+        var min:Int = (time-3600*hour)/60
+        var sec:Int =  time - 3600*hour - min*60
+        return String(hour) + ":" + String(min)
     }
     
     func timerIncrement (){
