@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -16,15 +17,52 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BzF-Tb-z3p">
-                                <rect key="frame" x="-28" y="-159" width="600" height="600"/>
+                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="start_button" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bhi-rY-bw8">
+                                <rect key="frame" x="284" y="448" width="33" height="30"/>
+                                <color key="backgroundColor" red="0.8784313725490196" green="0.30980392156862746" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                <color key="tintColor" red="0.96961273570296669" green="1" blue="0.99212933833081052" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Start"/>
+                                <connections>
+                                    <action selector="starBtnPressed" destination="BYZ-38-t0r" eventType="touchDown" id="WRm-B0-MsI"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kik-hE-cSd" userLabel="circle_bar" customClass="CircleProgressView" customModule="Tabata" customModuleProvider="target">
+                                <rect key="frame" x="150" y="28" width="300" height="300"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="Ah7-Bj-a0R"/>
+                                    <constraint firstAttribute="height" constant="300" id="u8X-t4-T4R"/>
+                                </constraints>
                             </view>
+                            <datePicker contentMode="scaleToFill" restorationIdentifier="timePicker" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Mxf-Sh-vEg">
+                                <rect key="frame" x="187" y="97" width="227" height="162"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="162" id="EAx-q2-3Sh"/>
+                                    <constraint firstAttribute="width" constant="227" id="Qaz-Kq-O4A"/>
+                                </constraints>
+                                <date key="date" timeIntervalSinceReferenceDate="449216210.05416101">
+                                    <!--2015-03-28 06:16:50 +0000-->
+                                </date>
+                            </datePicker>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="bhi-rY-bw8" secondAttribute="centerX" id="EJq-F5-Gce"/>
+                            <constraint firstItem="Kik-hE-cSd" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="28" id="EKU-bf-bB3"/>
+                            <constraint firstItem="Kik-hE-cSd" firstAttribute="top" secondItem="Mxf-Sh-vEg" secondAttribute="bottom" constant="-231" id="lGm-bj-l3y"/>
+                            <constraint firstAttribute="centerX" secondItem="Kik-hE-cSd" secondAttribute="centerX" id="ngk-IV-q2J"/>
+                            <constraint firstItem="bhi-rY-bw8" firstAttribute="top" secondItem="Kik-hE-cSd" secondAttribute="bottom" constant="120" id="pJf-1R-h0S"/>
+                            <constraint firstItem="Mxf-Sh-vEg" firstAttribute="leading" secondItem="Kik-hE-cSd" secondAttribute="trailing" constant="-263" id="yNh-a7-mCZ"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="circleProgressView" destination="Kik-hE-cSd" id="moc-gB-Pyd"/>
+                        <outlet property="timePicker" destination="Mxf-Sh-vEg" id="48m-Et-Jk2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="C3o-kg-2Qp"/>
             </objects>
         </scene>
     </scenes>
