@@ -20,6 +20,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        timePicker.countDownDuration = 60.0
     }
 
     override func didReceiveMemoryWarning() {
@@ -28,29 +29,52 @@ class ViewController: UIViewController {
     }
     
     @IBAction func starBtnPressed(){
+        counter = Int(timePicker.countDownDuration)
         timerLabel = UILabel();
-        timerLabel.frame = CGRectMake(50, 150, 200, 21)
-        timerLabel.backgroundColor = UIColor.orangeColor()
-        timerLabel.textColor = UIColor.blackColor()
+        timerLabel.frame = CGRectMake(0, 0, 200, 21)
+        timerLabel.center = CGPointMake(circleProgressView.frame.width/2, circleProgressView.frame.height/2)
+        println(timerLabel.center)
         timerLabel.textAlignment = NSTextAlignment.Center
-        timerLabel.text = timerNotation(Int(timePicker.countDownDuration))
-        self.view.addSubview(timerLabel)
+        timerLabel.text = timerNotation(timeInSec: counter)
+        circleProgressView.addSubview(timerLabel)
         timePicker.removeFromSuperview()
+        NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("timerDecrement"), userInfo: nil, repeats: false)
     }
     
-    func timerNotation(time: Int) -> String{
+    func timerNotation(timeInSec time: Int) -> String{
         var hour:Int = time/3600
         var min:Int = (time-3600*hour)/60
         var sec:Int =  time - 3600*hour - min*60
-        return String(hour) + ":" + String(min)
+        var strhour:String = String(hour)
+        var strmin:String = String(min)
+        var strsec:String = String(sec)
+        if (hour < 10) {
+            strhour = "0" + strhour
+        }
+        
+        if (min < 10 || min == 0){
+            strmin = "0" + strmin
+        }
+        
+        if (sec < 10){
+            strsec = "0" + strsec
+        }
+        
+        return strhour + ":" + strmin + ":" + strsec
     }
     
-    func timerIncrement (){
-        counter++;
-        timerLabel.text = String(counter)
+    func timerDecrement (){
+        counter--;
+        timerLabel.text = timerNotation(timeInSec: counter)
         
         if(counter != 0){
-            NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("timerIncrement"), userInfo: nil, repeats: false)
+            NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("timerDecrement"), userInfo: nil, repeats: false)
+        } else {
+            timerLabel.removeFromSuperview()
+            timePicker.frame = CGRectMake(0, 0, 227, 162)
+            timePicker.center = CGPointMake(circleProgressView.frame.width/2, circleProgressView.frame.height/2)
+            println(timePicker.center)
+            circleProgressView.addSubview(timePicker)
         }
     }
     

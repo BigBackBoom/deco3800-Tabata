@@ -29,31 +29,39 @@
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kik-hE-cSd" userLabel="circle_bar" customClass="CircleProgressView" customModule="Tabata" customModuleProvider="target">
                                 <rect key="frame" x="150" y="28" width="300" height="300"/>
+                                <subviews>
+                                    <datePicker contentMode="scaleToFill" restorationIdentifier="timePicker" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Mxf-Sh-vEg">
+                                        <rect key="frame" x="37" y="69" width="227" height="162"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="162" id="EAx-q2-3Sh"/>
+                                            <constraint firstAttribute="width" constant="227" id="Qaz-Kq-O4A"/>
+                                        </constraints>
+                                        <date key="date" timeIntervalSinceReferenceDate="449216210.05416101">
+                                            <!--2015-03-28 06:16:50 +0000-->
+                                        </date>
+                                    </datePicker>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstAttribute="centerX" secondItem="Mxf-Sh-vEg" secondAttribute="centerX" id="6LK-qj-hge"/>
                                     <constraint firstAttribute="width" constant="300" id="Ah7-Bj-a0R"/>
+                                    <constraint firstAttribute="centerX" secondItem="Mxf-Sh-vEg" secondAttribute="centerX" constant="-0.5" id="ihW-gi-gWD"/>
+                                    <constraint firstItem="Mxf-Sh-vEg" firstAttribute="top" secondItem="Kik-hE-cSd" secondAttribute="top" constant="69" id="ioU-3t-hTS"/>
                                     <constraint firstAttribute="height" constant="300" id="u8X-t4-T4R"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="6LK-qj-hge"/>
+                                    </mask>
+                                </variation>
                             </view>
-                            <datePicker contentMode="scaleToFill" restorationIdentifier="timePicker" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Mxf-Sh-vEg">
-                                <rect key="frame" x="187" y="97" width="227" height="162"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="162" id="EAx-q2-3Sh"/>
-                                    <constraint firstAttribute="width" constant="227" id="Qaz-Kq-O4A"/>
-                                </constraints>
-                                <date key="date" timeIntervalSinceReferenceDate="449216210.05416101">
-                                    <!--2015-03-28 06:16:50 +0000-->
-                                </date>
-                            </datePicker>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="bhi-rY-bw8" secondAttribute="centerX" id="EJq-F5-Gce"/>
                             <constraint firstItem="Kik-hE-cSd" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="28" id="EKU-bf-bB3"/>
-                            <constraint firstItem="Kik-hE-cSd" firstAttribute="top" secondItem="Mxf-Sh-vEg" secondAttribute="bottom" constant="-231" id="lGm-bj-l3y"/>
                             <constraint firstAttribute="centerX" secondItem="Kik-hE-cSd" secondAttribute="centerX" id="ngk-IV-q2J"/>
                             <constraint firstItem="bhi-rY-bw8" firstAttribute="top" secondItem="Kik-hE-cSd" secondAttribute="bottom" constant="120" id="pJf-1R-h0S"/>
-                            <constraint firstItem="Mxf-Sh-vEg" firstAttribute="leading" secondItem="Kik-hE-cSd" secondAttribute="trailing" constant="-263" id="yNh-a7-mCZ"/>
                         </constraints>
                     </view>
                     <connections>
