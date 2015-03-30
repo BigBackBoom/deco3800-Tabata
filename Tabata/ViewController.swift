@@ -70,7 +70,7 @@ class ViewController: UIViewController {
         circleProgressBar.progress = 1 - (Double(counter)/Double(initCount))
         timerLabel.text = timerNotation(timeInSec: Int(counter))
         
-        if(counter != 0){
+        if(counter > 0){
             NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: Selector("timerDecrement"), userInfo: nil, repeats: false)
         } else {
             timerLabel.removeFromSuperview()
