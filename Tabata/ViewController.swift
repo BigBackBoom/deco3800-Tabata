@@ -10,13 +10,14 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    @IBOutlet var circleProgressView: CircleProgressView!
+    @IBOutlet var circleProgressBar: CircleProgressView!
     @IBOutlet var startButton: UIButton!
     @IBOutlet var timePicker: UIDatePicker!
     
     weak var timer: NSTimer!
     var timerLabel: UILabel!;
-    var counter = 0
+    var initCount: Double!
+    var counter = 0.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,14 +30,15 @@ class ViewController: UIViewController {
     }
     
     @IBAction func starBtnPressed(){
-        counter = Int(timePicker.countDownDuration)
+        initCount = Double(timePicker.countDownDuration)
+        counter = initCount
         timerLabel = UILabel();
         timerLabel.frame = CGRectMake(0, 0, 200, 21)
-        timerLabel.center = CGPointMake(circleProgressView.frame.width/2, circleProgressView.frame.height/2)
+        timerLabel.center = CGPointMake(circleProgressBar.frame.width/2, circleProgressBar.frame.height/2)
         println(timerLabel.center)
         timerLabel.textAlignment = NSTextAlignment.Center
-        timerLabel.text = timerNotation(timeInSec: counter)
-        circleProgressView.addSubview(timerLabel)
+        timerLabel.text = timerNotation(timeInSec: Int(counter))
+        circleProgressBar.addSubview(timerLabel)
         timePicker.removeFromSuperview()
         NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("timerDecrement"), userInfo: nil, repeats: false)
     }
@@ -64,17 +66,18 @@ class ViewController: UIViewController {
     }
     
     func timerDecrement (){
-        counter--;
-        timerLabel.text = timerNotation(timeInSec: counter)
+        counter -= 0.01;
+        circleProgressBar.progress = 1 - (Double(counter)/Double(initCount))
+        timerLabel.text = timerNotation(timeInSec: Int(counter))
         
         if(counter != 0){
-            NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("timerDecrement"), userInfo: nil, repeats: false)
+            NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: Selector("timerDecrement"), userInfo: nil, repeats: false)
         } else {
             timerLabel.removeFromSuperview()
             timePicker.frame = CGRectMake(0, 0, 227, 162)
-            timePicker.center = CGPointMake(circleProgressView.frame.width/2, circleProgressView.frame.height/2)
+            timePicker.center = CGPointMake(circleProgressBar.frame.width/2, circleProgressBar.frame.height/2)
             println(timePicker.center)
-            circleProgressView.addSubview(timePicker)
+            circleProgressBar.addSubview(timePicker)
         }
     }
     
