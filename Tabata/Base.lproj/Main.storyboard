@@ -65,7 +65,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="circleProgressView" destination="Kik-hE-cSd" id="moc-gB-Pyd"/>
+                        <outlet property="circleProgressBar" destination="Kik-hE-cSd" id="0d9-2W-C4X"/>
                         <outlet property="timePicker" destination="Mxf-Sh-vEg" id="48m-Et-Jk2"/>
                     </connections>
                 </viewController>
