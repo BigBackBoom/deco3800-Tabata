@@ -7,12 +7,22 @@
 //
 
 import Foundation
+import UIKit
 
 public class Timer {
-    var counter: Int!
+    var circleProgressBar: CircleProgressView!
+    var timerLabel: UILabel!
+    var timerPicker: UIDatePicker!
     
-    init(time: ){
-
+    var counter: Double!
+    var initCount: Double!
+    
+    init(counter: Double, circleProgressBar: CircleProgressView, timerLabel: UILabel, timerPicker: UIDatePicker){
+        self.counter = counter
+        self.initCount = counter
+        self.circleProgressBar = circleProgressBar
+        self.timerLabel = timerLabel
+        self.timerPicker = timerPicker
     }
     
     func timerNotation(timeInSec time: Int) -> String{
@@ -37,18 +47,26 @@ public class Timer {
         return strhour + ":" + strmin + ":" + strsec
     }
     
-    func timerDecrement (){
-        counter--;
-        timerLabel.text = timerNotation(timeInSec: counter)
+    @objc func timerDecrement(){
         
-        if(counter != 0){
-            NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("timerDecrement"), userInfo: nil, repeats: false)
+        println(counter)
+        counter = counter - 0.01;
+        circleProgressBar.progress = 1 - (Double(counter)/Double(initCount))
+        println(circleProgressBar.progress)
+        timerLabel.text = timerNotation(timeInSec: Int(counter))
+        
+        if(counter > 0){
+            //println(circleProgressBar.progress)
+            NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: "timerDecrement", userInfo: nil, repeats: false)
         } else {
+            println("afdafda")
+            println(timerPicker.center)
             timerLabel.removeFromSuperview()
-            timePicker.frame = CGRectMake(0, 0, 227, 162)
-            timePicker.center = CGPointMake(circleProgressView.frame.width/2, circleProgressView.frame.height/2)
-            println(timePicker.center)
-            circleProgressView.addSubview(timePicker)
+            timerPicker.frame = CGRectMake(300, 300, 227, 162)
+            timerPicker.center = circleProgressBar.center
+            println(timerPicker.center)
+            
+            circleProgressBar.addSubview(timerPicker)
         }
     }
     
