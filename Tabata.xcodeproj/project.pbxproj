@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4D2278461AE9BE0700C9B71D /* settingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2278451AE9BE0700C9B71D /* settingScreen.swift */; };
 		4DAA6B2C1AD7F7ED00BA4486 /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DAA6B2B1AD7F7ED00BA4486 /* Timer.swift */; };
 		4DD305C01AC62808005E5B18 /* CircleProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD305BF1AC62808005E5B18 /* CircleProgressView.swift */; };
 		4DDEF2551AE8594D00C07AA8 /* timlim.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4DDEF2541AE8594D00C07AA8 /* timlim.mp3 */; };
@@ -30,6 +31,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4D2278451AE9BE0700C9B71D /* settingScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = settingScreen.swift; path = ../settingScreen.swift; sourceTree = "<group>"; };
 		4DAA6B2B1AD7F7ED00BA4486 /* Timer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
 		4DD305BF1AC62808005E5B18 /* CircleProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleProgressView.swift; sourceTree = "<group>"; };
 		4DDEF2541AE8594D00C07AA8 /* timlim.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = timlim.mp3; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 		4DE3EE0D1ABA349000D7B6B2 /* Tabata */ = {
 			isa = PBXGroup;
 			children = (
+				4D2278451AE9BE0700C9B71D /* settingScreen.swift */,
 				4DD305BF1AC62808005E5B18 /* CircleProgressView.swift */,
 				4DE3EE101ABA349000D7B6B2 /* AppDelegate.swift */,
 				4DAA6B2B1AD7F7ED00BA4486 /* Timer.swift */,
@@ -227,6 +230,7 @@
 			files = (
 				4DE3EE131ABA349000D7B6B2 /* timerScreen.swift in Sources */,
 				4DDEF2571AE870EF00C07AA8 /* startScreen.swift in Sources */,
+				4D2278461AE9BE0700C9B71D /* settingScreen.swift in Sources */,
 				4DE3EE111ABA349000D7B6B2 /* AppDelegate.swift in Sources */,
 				4DD305C01AC62808005E5B18 /* CircleProgressView.swift in Sources */,
 				4DAA6B2C1AD7F7ED00BA4486 /* Timer.swift in Sources */,

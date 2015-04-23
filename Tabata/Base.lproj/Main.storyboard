@@ -123,10 +123,10 @@
                 <tapGestureRecognizer id="C3o-kg-2Qp"/>
             </objects>
         </scene>
-        <!--View Controller-->
+        <!--Setting Screen-->
         <scene sceneID="KIG-R9-WnM">
             <objects>
-                <viewController id="39Y-i6-T9s" sceneMemberID="viewController">
+                <viewController id="39Y-i6-T9s" customClass="settingScreen" customModule="Tabata" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="zHF-ky-jT4"/>
                         <viewControllerLayoutGuide type="bottom" id="Ky6-wQ-3Sd"/>
