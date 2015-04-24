@@ -11,6 +11,11 @@ import UIKit
 
 class settingScreen: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    var exeVal: UILabel!
+    var restVal: UILabel!
+    var soundVal: UILabel!
+    var cycleVal: UILabel!
+    
     @IBOutlet var tableView: UITableView!
     var items: [String] = ["Excercise", "Rest", "Sound", "help"]
     
@@ -25,8 +30,33 @@ class settingScreen: UIViewController, UITableViewDelegate, UITableViewDataSourc
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell:UITableViewCell = self.tableView.dequeueReusableCellWithIdentifier("cell") as! UITableViewCell
+        var exeVal = UILabel()
+        var restVal = UILabel()
+        var soundVal = UILabel()
+        var cycleVal = UILabel()
         
+        exeVal.text = String(stringInterpolationSegment: exeSetting.exeTime)
+        exeVal.frame = CGRectMake(0, 0, 100, 50)
+        restVal.text =  String(stringInterpolationSegment: exeSetting.restTime)
+        restVal.frame = CGRectMake(0, 0, 100, 50)
+        soundVal.text =  String(stringInterpolationSegment: exeSetting.sound)
+        soundVal.frame = CGRectMake(0, 0, 100, 50)
+        cycleVal.text =  String(exeSetting.cycle)
+        cycleVal.frame = CGRectMake(0, 0, 100, 50)
         cell.textLabel?.text = self.items[indexPath.row]
+        
+        switch indexPath.row{
+            case 0:
+                cell.addSubview(exeVal)
+            case 1:
+                cell.addSubview(restVal)
+            case 2:
+                cell.addSubview(soundVal)
+            case 3:
+                cell.addSubview(cycleVal)
+            default:
+                println("default");
+        }
         
         return cell
     }
