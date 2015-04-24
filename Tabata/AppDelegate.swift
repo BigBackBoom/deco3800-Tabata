@@ -8,12 +8,18 @@
 
 import UIKit
 
+//global structure consist basic excercise settings
+struct exeSetting{
+    static var exeTime:Double = 1.0;
+    static var restTime:Double = 1.0;
+    static var sound = 50;
+}
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
-
+    
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         return true

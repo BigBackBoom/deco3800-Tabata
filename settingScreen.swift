@@ -9,14 +9,30 @@
 import Foundation
 import UIKit
 
-class settingScreen: UIViewController {
+class settingScreen: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    @IBOutlet var tableView: UITableView!
+    var items: [String] = ["Excercise", "Rest", "Sound", "help"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        self.tableView.
+    }
+        
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.items.count;
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        var cell:UITableViewCell = self.tableView.dequeueReusableCellWithIdentifier("cell") as! UITableViewCell
+        
+        cell.textLabel?.text = self.items[indexPath.row]
+        
+        return cell
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        println("You selected cell #\(indexPath.row)!")
     }
 }

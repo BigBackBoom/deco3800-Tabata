@@ -13,6 +13,7 @@ class startScreen: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        println(exeSetting.exeTime);
     }
     
     override func didReceiveMemoryWarning() {
