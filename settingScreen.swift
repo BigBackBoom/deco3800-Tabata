@@ -17,7 +17,6 @@ class settingScreen: UIViewController, UITableViewDelegate, UITableViewDataSourc
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
-        self.tableView.
     }
         
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
