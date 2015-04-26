@@ -48,11 +48,10 @@ class settingScreen: UIViewController, UITableViewDelegate, UITableViewDataSourc
         exeSetting.restTime = (exeVal.text as NSString).doubleValue
         exeSetting.sound = (exeVal.text as NSString).doubleValue
         exeSetting.cycle = (exeVal.text as NSString).integerValue
-        print(exeSetting)
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let startScreen = storyboard.instantiateViewControllerWithIdentifier("startScreen") as! UIViewController
-        presentViewController(startScreen, animated: true, completion: nil)
-        print(exeSetting)
+        //presentViewController(startScreen, animated: true, completion: nil)
+        //self.dismissViewControllerAnimated(true, completion: {})
 
     }
     

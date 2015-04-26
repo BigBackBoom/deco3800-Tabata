@@ -21,7 +21,7 @@ class timerScreen: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        println(exeSetting.exeTime); //test
         timePicker.countDownDuration = 60.0
     }
 

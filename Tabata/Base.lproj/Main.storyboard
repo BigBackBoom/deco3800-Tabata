@@ -39,7 +39,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="39Y-i6-T9s" kind="show" id="gu0-v1-Egz"/>
+                                    <segue destination="39Y-i6-T9s" kind="presentation" id="gu0-v1-Egz"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -149,8 +149,8 @@
                                     <outlet property="delegate" destination="39Y-i6-T9s" id="aNy-UT-5Og"/>
                                 </connections>
                             </tableView>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kOp-Z8-Nh1">
-                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                            <navigationBar contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kOp-Z8-Nh1">
+                                <rect key="frame" x="-1" y="20" width="600" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="6UE-ST-X0L"/>
                                     <constraint firstAttribute="width" constant="600" id="rhK-B1-7Pp"/>
@@ -181,6 +181,7 @@
                             </mask>
                         </variation>
                     </view>
+                    <navigationItem key="navigationItem" id="GXw-sV-J0s"/>
                     <connections>
                         <outlet property="navBarSetting" destination="uet-FB-rvp" id="FR1-63-ocR"/>
                         <outlet property="tableView" destination="MKf-3q-wnp" id="Fbe-aE-bb5"/>
@@ -188,7 +189,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3YA-a7-WCa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-216" y="1319"/>
+            <point key="canvasLocation" x="-216" y="1313"/>
         </scene>
     </scenes>
 </document>
