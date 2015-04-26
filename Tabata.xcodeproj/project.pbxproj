@@ -87,10 +87,10 @@
 		4DE3EE0D1ABA349000D7B6B2 /* Tabata */ = {
 			isa = PBXGroup;
 			children = (
-				4D851CA41AECA5F100B0A039 /* settingScreen.swift */,
 				4DD305BF1AC62808005E5B18 /* CircleProgressView.swift */,
 				4DE3EE101ABA349000D7B6B2 /* AppDelegate.swift */,
 				4DAA6B2B1AD7F7ED00BA4486 /* Timer.swift */,
+				4D851CA41AECA5F100B0A039 /* settingScreen.swift */,
 				4DE3EE121ABA349000D7B6B2 /* timerScreen.swift */,
 				4DDEF2561AE870EF00C07AA8 /* startScreen.swift */,
 				4DE3EE141ABA349000D7B6B2 /* Main.storyboard */,

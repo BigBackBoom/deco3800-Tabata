@@ -8,7 +8,7 @@
         <!--Start Screen-->
         <scene sceneID="2J8-HO-lDe">
             <objects>
-                <viewController id="XsM-Fb-7OS" customClass="startScreen" customModule="Tabata" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="startScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="XsM-Fb-7OS" customClass="startScreen" customModule="Tabata" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="WVa-Gx-b4f"/>
                         <viewControllerLayoutGuide type="bottom" id="d7e-Z5-ZaJ"/>
@@ -129,7 +129,7 @@
         <!--Setting Screen-->
         <scene sceneID="KIG-R9-WnM">
             <objects>
-                <viewController id="39Y-i6-T9s" customClass="settingScreen" customModule="Tabata" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="settingScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="39Y-i6-T9s" customClass="settingScreen" customModule="Tabata" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="zHF-ky-jT4"/>
                         <viewControllerLayoutGuide type="bottom" id="Ky6-wQ-3Sd"/>
@@ -138,16 +138,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kOp-Z8-Nh1">
-                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="6UE-ST-X0L"/>
-                                    <constraint firstAttribute="width" constant="600" id="rhK-B1-7Pp"/>
-                                </constraints>
-                                <items>
-                                    <navigationItem title="Title" id="uet-FB-rvp"/>
-                                </items>
-                            </navigationBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="MKf-3q-wnp">
                                 <rect key="frame" x="0.0" y="70" width="600" height="536"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -159,12 +149,28 @@
                                     <outlet property="delegate" destination="39Y-i6-T9s" id="aNy-UT-5Og"/>
                                 </connections>
                             </tableView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kOp-Z8-Nh1">
+                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="6UE-ST-X0L"/>
+                                    <constraint firstAttribute="width" constant="600" id="rhK-B1-7Pp"/>
+                                </constraints>
+                                <items>
+                                    <navigationItem title="Settings" id="uet-FB-rvp"/>
+                                </items>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="rhK-B1-7Pp"/>
+                                    </mask>
+                                </variation>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="kOp-Z8-Nh1" firstAttribute="top" secondItem="zHF-ky-jT4" secondAttribute="bottom" id="9ch-Pn-sc3"/>
                             <constraint firstAttribute="centerX" secondItem="kOp-Z8-Nh1" secondAttribute="centerX" constant="172" id="DXt-ug-FJl"/>
                             <constraint firstItem="MKf-3q-wnp" firstAttribute="top" secondItem="zHF-ky-jT4" secondAttribute="bottom" constant="50" id="Ib2-zx-HNq"/>
+                            <constraint firstItem="kOp-Z8-Nh1" firstAttribute="width" secondItem="fMF-of-JI9" secondAttribute="width" id="L1E-X0-vxC"/>
                             <constraint firstAttribute="centerX" secondItem="kOp-Z8-Nh1" secondAttribute="centerX" id="XRs-Zl-LAr"/>
                             <constraint firstItem="MKf-3q-wnp" firstAttribute="width" secondItem="fMF-of-JI9" secondAttribute="width" id="Zyr-kN-o2U"/>
                             <constraint firstAttribute="centerX" secondItem="MKf-3q-wnp" secondAttribute="centerX" id="smZ-8x-cUr"/>
@@ -176,6 +182,7 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="navBarSetting" destination="uet-FB-rvp" id="FR1-63-ocR"/>
                         <outlet property="tableView" destination="MKf-3q-wnp" id="Fbe-aE-bb5"/>
                     </connections>
                 </viewController>
