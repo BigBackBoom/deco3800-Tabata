@@ -11,9 +11,12 @@ import UIKit
 
 class startScreen: UIViewController {
     
+    @IBOutlet var startButton:UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         println(exeSetting.exeTime); //test
+        
     }
     
     override func didReceiveMemoryWarning() {

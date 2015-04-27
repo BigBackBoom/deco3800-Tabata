@@ -24,7 +24,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="Dhf-Dz-miG"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="Idw-n1-IDy"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tabata" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kco-2T-KNK">
@@ -53,6 +53,9 @@
                             <constraint firstItem="kco-2T-KNK" firstAttribute="bottom" secondItem="b3z-QG-V8i" secondAttribute="bottom" constant="-121" id="tOJ-og-bAk"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="startButton" destination="b3z-QG-V8i" id="Iuo-lg-99w"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nfH-Jq-8Yq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -61,7 +64,7 @@
         <!--Timer Screen-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="timerScreen" customModule="Tabata" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="timerScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="timerScreen" customModule="Tabata" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>

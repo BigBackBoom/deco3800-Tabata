@@ -51,7 +51,7 @@ class settingScreen: UIViewController, UITableViewDelegate, UITableViewDataSourc
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let startScreen = storyboard.instantiateViewControllerWithIdentifier("startScreen") as! UIViewController
         //presentViewController(startScreen, animated: true, completion: nil)
-        //self.dismissViewControllerAnimated(true, completion: {})
+        self.dismissViewControllerAnimated(true, completion: {})
 
     }
     
