@@ -25,9 +25,15 @@ class settingScreen: UIViewController, UITableViewDelegate, UITableViewDataSourc
         self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
         let customBackButton: UIBarButtonItem = UIBarButtonItem(title: "< Back", style: .Plain, target: self, action: Selector("savedata"))
         navBarSetting.leftBarButtonItem = customBackButton
+        var tapDismissKey: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: Selector("dismissKeyboard"))
+        view.addGestureRecognizer(tapDismissKey)
 
     }
-        
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+        println("adfasdfa")
+    }
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.items.count;
     }
@@ -66,6 +72,7 @@ class settingScreen: UIViewController, UITableViewDelegate, UITableViewDataSourc
             cell.addSubview(exeVal)
         case 1:
             restVal = UITextField()
+            restVal.keyboardType = UIKeyboardType.NumberPad
             restVal.text =  String(stringInterpolationSegment: exeSetting.restTime)
             restVal.frame = CGRectMake((cell.frame.size.width - 30), 0, 100, 50)
             cell.addSubview(restVal)

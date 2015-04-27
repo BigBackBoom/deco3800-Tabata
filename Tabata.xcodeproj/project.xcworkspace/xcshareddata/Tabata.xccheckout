@@ -11,7 +11,7 @@
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>95824FBCB069F6E30DFD4719AC58EABDFABDDD67</key>
-		<string>https://github.com/BigBackBoom/deco3800-Tabata</string>
+		<string>https://github.com/BigBackBoom/deco3800-Tabata.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>Tabata.xcodeproj</string>
@@ -21,7 +21,7 @@
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/BigBackBoom/deco3800-Tabata</string>
+	<string>https://github.com/BigBackBoom/deco3800-Tabata.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
