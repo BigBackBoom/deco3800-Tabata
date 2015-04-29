@@ -22,23 +22,34 @@ func createExercise(currentUser:PFObject, name:String, length:Int, rest:Int)
   exercise.pinInBackground()
 }
 
-//Retrieve exercises
+//Retrieve exercises - this one just returns the first one found
 
-func retrieveExercise(currentUser:PFObject)
+func retrieveExercise(currentUser:PFObject) -> PFObject
 {
   let userId = currentUser.objectId
 
   var query = PFQuery(className:"Exercise")
   query.fromLocalDatastore()
   query.whereKey("User", equalTo: userId)
-  query.getObjectInBackgroundWithId("xWMyZEGZ") {
-    (exercise: PFObject?, error: NSError?) -> Void in
-    if error == nil && exercise!= nil {
-      println(exercise)
+  query.getFirstObjectInBackgroundWithBlock {
+    (object: PFObject?, error: NSError?) -> Void in
+    if error != nil || object == nil {
+      return null
     } else {
-      println(error)
+      // The find succeeded.
+      return object
     }
   }
+}
+
+//Edit excercise
+
+func createExercise(currentExer:PFObject, name:String, length:Int, rest:Int)
+{
+  currentExer["Exercise_name"] = name
+  currentExer["Exercise_length"] = length
+  currentExer["Exercise_rest_length"] = rest
+  exercise.pinInBackground()
 }
 
 //Log exercise
@@ -58,4 +69,23 @@ func logExercise(currentUser:PFObject)
   }
 }
 
+//View log - again, just returning the first result
 
+func retrieveLog(currentUser:PFObject, currentExercise:PFObject) -> PFObject
+{
+  let userId = currentUser.objectId
+  let exerId = currentExercise.objectId
+
+  var query = PFQuery(className:"Exercise_Log")
+  query.whereKey("User", equalTo: userId)
+  query.whereKey("Exercise", equalTo: exerId)
+  query.getFirstObjectInBackgroundWithBlock {
+    (object: PFObject?, error: NSError?) -> Void in
+    if error != nil || object == nil {
+      return null
+    } else {
+      // The find succeeded.
+      return object
+    }
+  }
+}
