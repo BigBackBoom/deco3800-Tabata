@@ -35,7 +35,7 @@ public class Timer {
     }
     
     /**
-        private function to turn seconds into proper time notation; hh:mm:ss
+        function to turn seconds into proper time notation; hh:mm:ss
         
         :param: timeInSec An interger value to be transform.
     

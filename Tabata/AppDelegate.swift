@@ -9,12 +9,19 @@
 import UIKit
 import Parse
 
+//global structure consist basic excercise settings
+struct exeSetting{
+    static var exeTime:Double = 1.0;
+    static var restTime:Double = 1.0;
+    static var sound:Double = 50;
+    static var cycle:Int = 1
+}
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
-
+    
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         Parse.setApplicationId("9xY7FaLIy6QEYaF8hlv9WHKcIOX4sJggnerdWijY", 
