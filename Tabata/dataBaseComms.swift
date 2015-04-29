@@ -12,13 +12,14 @@ var currentUser = ??????
 
 //Creating a new exercise
 
-func createExercise(currentUser:PFObject, name:String, length:Int, rest:Int)
+func createExercise(currentUser:PFObject, name:String, length:Int, rest:Int, sets:Int)
 {
   var exercise = PFObject(className:"Exercise")
   exercise["User"] = currentUser
   exercise["Exercise_name"] = name
   exercise["Exercise_length"] = length
   exercise["Exercise_rest_length"] = rest
+  exercise["Exercise_set"] = sets
   exercise.pinInBackground()
 }
 
@@ -44,17 +45,18 @@ func retrieveExercise(currentUser:PFObject) -> PFObject
 
 //Edit excercise
 
-func createExercise(currentExer:PFObject, name:String, length:Int, rest:Int)
+func createExercise(currentExer:PFObject, name:String, length:Int, rest:Int, sets:Int)
 {
   currentExer["Exercise_name"] = name
   currentExer["Exercise_length"] = length
   currentExer["Exercise_rest_length"] = rest
+  exercise["Exercise_set"] = sets
   exercise.pinInBackground()
 }
 
 //Log exercise
 
-func logExercise(currentUser:PFObject)
+func logExercise(currentUser:PFObject, currentExercise:PFObject)
 {
   var exercise_log = PFObject(className:"Exercise_Log")
   exercise["User"] = currentUser
