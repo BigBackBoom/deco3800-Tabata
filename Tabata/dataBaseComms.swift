@@ -8,7 +8,37 @@
 
 import Parse
 
-var currentUser = ??????
+// Create new user
+
+func signUp(name:String, pass:String, email:String) {
+  var user = PFUser()
+  user.username = name
+  user.password = pass
+  user.email = email
+ 
+  user.signUpInBackgroundWithBlock {
+    (succeeded: Bool?, error: NSError?) -> Void in
+    if let error = error {
+      let errorString = error.userInfo?["error"] as? NSString
+      // Show the errorString somewhere and let the user try again.
+    } else {
+      // Hooray! Let them use the app now.
+    }
+  }
+}
+
+//Log in - must be done before database use!
+
+funct logIn(name:String, pass:String){
+  PFUser.logInWithUsernameInBackground(name, password:pass) {
+    (user: PFUser?, error: NSError?) -> Void in
+    if user != nil {
+      // Do stuff after successful login.
+    } else {
+      // The login failed. Check error to see why.
+    }
+  }
+}
 
 //Creating a new exercise
 
