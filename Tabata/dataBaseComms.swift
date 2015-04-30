@@ -12,8 +12,9 @@ var currentUser = ??????
 
 //Creating a new exercise
 
-func createExercise(currentUser:PFObject, name:String, length:Int, rest:Int, sets:Int)
+func createExercise(name:String, length:Int, rest:Int, sets:Int)
 {
+  var currentUser = PFUser.currentUser()
   var exercise = PFObject(className:"Exercise")
   exercise["User"] = currentUser
   exercise["Exercise_name"] = name
@@ -25,8 +26,9 @@ func createExercise(currentUser:PFObject, name:String, length:Int, rest:Int, set
 
 //Retrieve exercises - this one just returns the first one found
 
-func retrieveExercise(currentUser:PFObject) -> PFObject
+func retrieveExercise() -> PFObject
 {
+  var currentUser = PFUser.currentUser()
   let userId = currentUser.objectId
 
   var query = PFQuery(className:"Exercise")
@@ -56,8 +58,9 @@ func createExercise(currentExer:PFObject, name:String, length:Int, rest:Int, set
 
 //Log exercise
 
-func logExercise(currentUser:PFObject, currentExercise:PFObject)
+func logExercise(currentExercise:PFObject)
 {
+  var currentUser = PFUser.currentUser()
   var exercise_log = PFObject(className:"Exercise_Log")
   exercise["User"] = currentUser
   exercise["Exercise"] = currentExercise
@@ -73,8 +76,9 @@ func logExercise(currentUser:PFObject, currentExercise:PFObject)
 
 //View log - again, just returning the first result
 
-func retrieveLog(currentUser:PFObject, currentExercise:PFObject) -> PFObject
+func retrieveLog(currentExercise:PFObject) -> PFObject
 {
+  var currentUser = PFUser.currentUser()
   let userId = currentUser.objectId
   let exerId = currentExercise.objectId
 
