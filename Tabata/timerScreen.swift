@@ -9,7 +9,7 @@
 import UIKit 
 import AVFoundation
 
-class ViewController: UIViewController {
+class timerScreen: UIViewController {
     
     @IBOutlet var circleProgressBar: CircleProgressView!
     @IBOutlet var startButton: UIButton!
@@ -21,7 +21,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        println(exeSetting.exeTime); //test
         timePicker.countDownDuration = 60.0
     }
 
