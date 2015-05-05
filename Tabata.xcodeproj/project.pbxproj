@@ -7,11 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4D851CA51AECA5F100B0A039 /* settingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D851CA41AECA5F100B0A039 /* settingScreen.swift */; };
 		4DAA6B2C1AD7F7ED00BA4486 /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DAA6B2B1AD7F7ED00BA4486 /* Timer.swift */; };
 		4DD305C01AC62808005E5B18 /* CircleProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD305BF1AC62808005E5B18 /* CircleProgressView.swift */; };
 		4DDEF2551AE8594D00C07AA8 /* timlim.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4DDEF2541AE8594D00C07AA8 /* timlim.mp3 */; };
+		4DDEF2571AE870EF00C07AA8 /* startScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DDEF2561AE870EF00C07AA8 /* startScreen.swift */; };
 		4DE3EE111ABA349000D7B6B2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE3EE101ABA349000D7B6B2 /* AppDelegate.swift */; };
-		4DE3EE131ABA349000D7B6B2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE3EE121ABA349000D7B6B2 /* ViewController.swift */; };
+		4DE3EE131ABA349000D7B6B2 /* timerScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE3EE121ABA349000D7B6B2 /* timerScreen.swift */; };
 		4DE3EE161ABA349000D7B6B2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DE3EE141ABA349000D7B6B2 /* Main.storyboard */; };
 		4DE3EE181ABA349000D7B6B2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DE3EE171ABA349000D7B6B2 /* Images.xcassets */; };
 		4DE3EE1B1ABA349000D7B6B2 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DE3EE191ABA349000D7B6B2 /* LaunchScreen.xib */; };
@@ -29,13 +31,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4D851CA41AECA5F100B0A039 /* settingScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = settingScreen.swift; sourceTree = "<group>"; };
 		4DAA6B2B1AD7F7ED00BA4486 /* Timer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
 		4DD305BF1AC62808005E5B18 /* CircleProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleProgressView.swift; sourceTree = "<group>"; };
 		4DDEF2541AE8594D00C07AA8 /* timlim.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = timlim.mp3; sourceTree = "<group>"; };
+		4DDEF2561AE870EF00C07AA8 /* startScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = startScreen.swift; sourceTree = "<group>"; };
 		4DE3EE0B1ABA349000D7B6B2 /* Tabata.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tabata.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DE3EE0F1ABA349000D7B6B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4DE3EE101ABA349000D7B6B2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4DE3EE121ABA349000D7B6B2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4DE3EE121ABA349000D7B6B2 /* timerScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = timerScreen.swift; sourceTree = "<group>"; };
 		4DE3EE151ABA349000D7B6B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4DE3EE171ABA349000D7B6B2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		4DE3EE1A1ABA349000D7B6B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -86,7 +90,9 @@
 				4DD305BF1AC62808005E5B18 /* CircleProgressView.swift */,
 				4DE3EE101ABA349000D7B6B2 /* AppDelegate.swift */,
 				4DAA6B2B1AD7F7ED00BA4486 /* Timer.swift */,
-				4DE3EE121ABA349000D7B6B2 /* ViewController.swift */,
+				4D851CA41AECA5F100B0A039 /* settingScreen.swift */,
+				4DE3EE121ABA349000D7B6B2 /* timerScreen.swift */,
+				4DDEF2561AE870EF00C07AA8 /* startScreen.swift */,
 				4DE3EE141ABA349000D7B6B2 /* Main.storyboard */,
 				4DE3EE171ABA349000D7B6B2 /* Images.xcassets */,
 				4DE3EE191ABA349000D7B6B2 /* LaunchScreen.xib */,
@@ -222,7 +228,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4DE3EE131ABA349000D7B6B2 /* ViewController.swift in Sources */,
+				4DE3EE131ABA349000D7B6B2 /* timerScreen.swift in Sources */,
+				4DDEF2571AE870EF00C07AA8 /* startScreen.swift in Sources */,
+				4D851CA51AECA5F100B0A039 /* settingScreen.swift in Sources */,
 				4DE3EE111ABA349000D7B6B2 /* AppDelegate.swift in Sources */,
 				4DD305C01AC62808005E5B18 /* CircleProgressView.swift in Sources */,
 				4DAA6B2C1AD7F7ED00BA4486 /* Timer.swift in Sources */,
@@ -350,6 +358,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				INFOPLIST_FILE = Tabata/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -360,6 +369,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				INFOPLIST_FILE = Tabata/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
