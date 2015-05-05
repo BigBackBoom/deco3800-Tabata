@@ -31,7 +31,7 @@ class timerScreen: UIViewController {
         countingTimer = Timer(counter: exeSetting.exeTime,  cycle: exeSetting.cycle, restTime: exeSetting.restTime, circleProgressBar: circleProgressBar, timerLabel: timerLabel)
         
         //inserting timer label value, which is depending on user input(from timePicker)
-        timerLabel.text =  countingTimer.timerNotation(timeInSec: Int(exeSetting.exeTime))
+        timerLabel.text =  countingTimer.timerNotation(timeInSec: exeSetting.exeTime)
         circleProgressBar.addSubview(timerLabel)
         countingTimer.startTimer()
         
