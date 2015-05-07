@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4D04F6951AFB662E00D65978 /* dataBaseComms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D04F6941AFB662E00D65978 /* dataBaseComms.swift */; };
 		4D851CA51AECA5F100B0A039 /* settingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D851CA41AECA5F100B0A039 /* settingScreen.swift */; };
 		4DAA6B2C1AD7F7ED00BA4486 /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DAA6B2B1AD7F7ED00BA4486 /* Timer.swift */; };
 		4DD305C01AC62808005E5B18 /* CircleProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD305BF1AC62808005E5B18 /* CircleProgressView.swift */; };
@@ -35,6 +36,7 @@
 /* Begin PBXFileReference section */
 		1B8CB0D602B007B256C143B8 /* Pods-Tabata.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tabata.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tabata/Pods-Tabata.release.xcconfig"; sourceTree = "<group>"; };
 		2935AE491EC6C8DBBF01C058 /* libPods-Tabata.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Tabata.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4D04F6941AFB662E00D65978 /* dataBaseComms.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = dataBaseComms.swift; sourceTree = "<group>"; };
 		4D32A5D51AFB43F00030DDED /* Tabata-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tabata-Bridging-Header.h"; sourceTree = "<group>"; };
 		4D851CA41AECA5F100B0A039 /* settingScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = settingScreen.swift; sourceTree = "<group>"; };
 		4DAA6B2B1AD7F7ED00BA4486 /* Timer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				EB32F3691AFA375200422BFC /* LoginViewController.swift */,
+				4D04F6941AFB662E00D65978 /* dataBaseComms.swift */,
 				4DD305BF1AC62808005E5B18 /* CircleProgressView.swift */,
 				4DE3EE101ABA349000D7B6B2 /* AppDelegate.swift */,
 				4DAA6B2B1AD7F7ED00BA4486 /* Timer.swift */,
@@ -294,6 +297,7 @@
 			files = (
 				EB32F36A1AFA375200422BFC /* LoginViewController.swift in Sources */,
 				4DE3EE131ABA349000D7B6B2 /* timerScreen.swift in Sources */,
+				4D04F6951AFB662E00D65978 /* dataBaseComms.swift in Sources */,
 				4DDEF2571AE870EF00C07AA8 /* startScreen.swift in Sources */,
 				4D851CA51AECA5F100B0A039 /* settingScreen.swift in Sources */,
 				4DE3EE111ABA349000D7B6B2 /* AppDelegate.swift in Sources */,
