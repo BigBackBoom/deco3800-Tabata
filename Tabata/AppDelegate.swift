@@ -16,6 +16,11 @@ struct exeSetting{
     static var cycle:Int = 2
 }
 
+struct credentials{
+    static var usernameC:String = "3800"
+    static var passwordC:String = "deco"
+}
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
