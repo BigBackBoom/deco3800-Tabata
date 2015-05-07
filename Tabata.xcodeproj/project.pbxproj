@@ -18,6 +18,7 @@
 		4DE3EE181ABA349000D7B6B2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DE3EE171ABA349000D7B6B2 /* Images.xcassets */; };
 		4DE3EE1B1ABA349000D7B6B2 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DE3EE191ABA349000D7B6B2 /* LaunchScreen.xib */; };
 		4DE3EE271ABA349000D7B6B2 /* TabataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE3EE261ABA349000D7B6B2 /* TabataTests.swift */; };
+		BC4F11691CE75FA19DE30B38 /* libPods-Tabata.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2935AE491EC6C8DBBF01C058 /* libPods-Tabata.a */; };
 		EB32F36A1AFA375200422BFC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB32F3691AFA375200422BFC /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -32,6 +33,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1B8CB0D602B007B256C143B8 /* Pods-Tabata.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tabata.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tabata/Pods-Tabata.release.xcconfig"; sourceTree = "<group>"; };
+		2935AE491EC6C8DBBF01C058 /* libPods-Tabata.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Tabata.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4D32A5D51AFB43F00030DDED /* Tabata-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tabata-Bridging-Header.h"; sourceTree = "<group>"; };
 		4D851CA41AECA5F100B0A039 /* settingScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = settingScreen.swift; sourceTree = "<group>"; };
 		4DAA6B2B1AD7F7ED00BA4486 /* Timer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
 		4DD305BF1AC62808005E5B18 /* CircleProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleProgressView.swift; sourceTree = "<group>"; };
@@ -48,6 +52,7 @@
 		4DE3EE251ABA349000D7B6B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4DE3EE261ABA349000D7B6B2 /* TabataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabataTests.swift; sourceTree = "<group>"; };
 		EB32F3691AFA375200422BFC /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = ../LoginViewController.swift; sourceTree = "<group>"; };
+		F5E8EC1505E99E1F906C606C /* Pods-Tabata.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tabata.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tabata/Pods-Tabata.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC4F11691CE75FA19DE30B38 /* libPods-Tabata.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +80,8 @@
 				4DE3EE0D1ABA349000D7B6B2 /* Tabata */,
 				4DE3EE231ABA349000D7B6B2 /* TabataTests */,
 				4DE3EE0C1ABA349000D7B6B2 /* Products */,
+				AA4A95EF3CBC9CA31981BC51 /* Pods */,
+				AE380FCCA37E15D88E243FD2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -100,6 +108,7 @@
 				4DE3EE171ABA349000D7B6B2 /* Images.xcassets */,
 				4DE3EE191ABA349000D7B6B2 /* LaunchScreen.xib */,
 				4DE3EE0E1ABA349000D7B6B2 /* Supporting Files */,
+				4D32A5D51AFB43F00030DDED /* Tabata-Bridging-Header.h */,
 			);
 			path = Tabata;
 			sourceTree = "<group>";
@@ -130,6 +139,23 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		AA4A95EF3CBC9CA31981BC51 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F5E8EC1505E99E1F906C606C /* Pods-Tabata.debug.xcconfig */,
+				1B8CB0D602B007B256C143B8 /* Pods-Tabata.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		AE380FCCA37E15D88E243FD2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2935AE491EC6C8DBBF01C058 /* libPods-Tabata.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -137,9 +163,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4DE3EE2A1ABA349000D7B6B2 /* Build configuration list for PBXNativeTarget "Tabata" */;
 			buildPhases = (
+				694AC052C7E397AD4103B58D /* Check Pods Manifest.lock */,
 				4DE3EE071ABA349000D7B6B2 /* Sources */,
 				4DE3EE081ABA349000D7B6B2 /* Frameworks */,
 				4DE3EE091ABA349000D7B6B2 /* Resources */,
+				8FB6FAD20B7E3C7A3B328649 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -225,6 +253,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		694AC052C7E397AD4103B58D /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		8FB6FAD20B7E3C7A3B328649 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Tabata/Pods-Tabata-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		4DE3EE071ABA349000D7B6B2 /* Sources */ = {
@@ -360,23 +421,30 @@
 		};
 		4DE3EE2B1ABA349000D7B6B2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F5E8EC1505E99E1F906C606C /* Pods-Tabata.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				INFOPLIST_FILE = Tabata/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Tabata/Tabata-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		4DE3EE2C1ABA349000D7B6B2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1B8CB0D602B007B256C143B8 /* Pods-Tabata.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				INFOPLIST_FILE = Tabata/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Tabata/Tabata-Bridging-Header.h";
 			};
 			name = Release;
 		};
