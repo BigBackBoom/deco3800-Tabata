@@ -155,6 +155,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="C3o-kg-2Qp"/>
             </objects>
+            <point key="canvasLocation" x="76" y="-403"/>
         </scene>
         <!--Setting Screen-->
         <scene sceneID="KIG-R9-WnM">
