@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import AVFoundation
 import UIKit
 
 /**
@@ -20,18 +21,24 @@ Count Down Timer Initialized
 */
 
 public class Timer {
+    
+    private struct ExcerciseInfo {
+        var counter: Double!
+        var exeTime: Double!
+        var cycle: Int!
+        var restTime:Double!
+        var mode:Int;
+    }
+    
     var circleProgressBar: CircleProgressView!
     var timerLabel: UILabel!
-    var timerPicker: UIDatePicker!
-    var counter: Double!
-    var initCount: Double!
+    private var exerciseInfo: ExcerciseInfo!
+    var player : AVAudioPlayer!
     
-    init(counter: Double, circleProgressBar: CircleProgressView, timerLabel: UILabel, timerPicker: UIDatePicker){
-        self.counter = counter
-        self.initCount = counter
+    init(counter: Double, cycle: Int, restTime: Double, circleProgressBar: CircleProgressView, timerLabel: UILabel){
+        self.exerciseInfo = ExcerciseInfo(counter: counter, exeTime: counter, cycle: cycle, restTime: restTime, mode: 0)
         self.circleProgressBar = circleProgressBar
         self.timerLabel = timerLabel
-        self.timerPicker = timerPicker
     }
     
     /**
@@ -41,14 +48,16 @@ public class Timer {
     
         :returns: A String of timer notation
     */
-    func timerNotation(timeInSec time: Int) -> String{
+    public func timerNotation(timeInSec time: Double) -> String{
         //transforming seconds to hh:mm:ss format
-        var hour:Int = time/3600
-        var min:Int = (time-3600*hour)/60
-        var sec:Int =  time - 3600*hour - min*60
+        var hour:Int = Int(time/3600)
+        var min:Int =  (Int(time) - 3600*hour)/60
+        var sec:Int =  Int(time) - 3600*hour - min*60
+        var mil:Int = Int((time - Double(hour) - Double(min) - Double(sec))*100)
         var strhour:String = String(hour)
         var strmin:String = String(min)
         var strsec:String = String(sec)
+        var strmil:String = String(mil)
         
         //if a value is less than 10, add zero to maintain two digits notation; hh:mm:ss, instead of h:mm:ss, h:m:s or etc
         if (hour < 10) {
@@ -63,7 +72,11 @@ public class Timer {
             strsec = "0" + strsec
         }
         
-        return strhour + ":" + strmin + ":" + strsec
+        if (mil < 10){
+            strmil = "0" + strmil
+        }
+        
+        return strmin + ":" + strsec + ":" + strmil
     }
     
     /**
@@ -72,23 +85,62 @@ public class Timer {
     @objc func timerDecrement(){
         
         //minus counter from 0.01
-        counter = counter - 0.01;
+        exerciseInfo.counter = exerciseInfo.counter - 0.01;
         //update circular progress bar
-        circleProgressBar.progress = 1 - (Double(counter)/Double(initCount))
-        //update timer label but only in with integer
-        timerLabel.text = timerNotation(timeInSec: Int(counter))
-        
-        //if a counter still have remaining time, coundown go on
-        if(counter > 0){
-            NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: "timerDecrement", userInfo: nil, repeats: false)
-        //if timer is end, recreate time picker.
+        if (exerciseInfo.mode == 0) {
+            circleProgressBar.progress = 1 - (Double(exerciseInfo.counter)/Double(exerciseInfo.exeTime))
         } else {
-            timerLabel.removeFromSuperview()
-            timerPicker.frame = CGRectMake(300, 300, 227, 162)
-            timerPicker.center = circleProgressBar.center
-            
-            circleProgressBar.addSubview(timerPicker)
+            circleProgressBar.progress = 1 - (Double(exerciseInfo.counter)/Double(exerciseInfo.restTime))
         }
+        
+        //update timer label but only in with integer
+        timerLabel.text = timerNotation(timeInSec: exerciseInfo.counter)
+        
+        if(exerciseInfo.cycle > 0){
+            //if a counter still have remaining time, coundown go on
+            if(exerciseInfo.counter > 0){
+                NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: "timerDecrement", userInfo: nil, repeats: false)
+                //if timer is end, recreate time picker.
+            } else {
+                if (exerciseInfo.mode == 0){
+                    exerciseInfo.counter = exerciseInfo.restTime
+                    exerciseInfo.cycle  = exerciseInfo.cycle - 1;
+                    exerciseInfo.mode = 1
+                } else {
+                    exerciseInfo.counter = exerciseInfo.exeTime
+                    exerciseInfo.mode = 0
+                }
+                
+                NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: "timerDecrement", userInfo: nil, repeats: false)
+                
+            }
+            
+        } else{
+            timerLabel.text = "Finished!"
+        }
+        
+    }
+    
+    /**
+    This function triggers countdown timer.
+    Codes will delete timerpicker interface and replace with countdown label.
+    Circularbar will be initialized and start filling the bar.
+    At last, it calls countdown function to start actual counting down.
+    */
+    
+    func startTimer(){
+        
+        //audio Test
+        let fileString = NSBundle.mainBundle().pathForResource("timlim", ofType: "mp3")
+        let url = NSURL(fileURLWithPath: fileString!)
+        player = AVAudioPlayer(contentsOfURL: url, error: nil)
+        player.prepareToPlay()
+        player.play()
+        /****************************************************************************************/
+        
+        
+        //start timer
+        NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: "timerDecrement", userInfo: nil, repeats: false)
     }
     
 }
