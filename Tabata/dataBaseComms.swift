@@ -7,6 +7,8 @@
 //
 
 import Parse
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import <ParseFacebookUtilsV4/PFFacebookUtils.h>
 
 // Create new user
 
@@ -39,6 +41,33 @@ funct logIn(name:String, pass:String){
     }
   }
 }
+
+//Link account to Facebook
+
+if !PFFacebookUtils.isLinkedWithUser(user) {
+  PFFacebookUtils.linkUserInBackground(user, withReadPermissions: nil, {
+    (succeeded: Bool?, error: NSError?) -> Void in
+    if succeeded {
+      println("Woohoo, user is linked with Facebook!")
+    }
+  })
+}
+
+//Log in with Facebook
+
+// Log In with Read Permissions
+PFFacebookUtils.logInInBackgroundWithReadPermissions(permissions, {
+  (user: PFUser?, error: NSError?) -> Void in
+  if let user = user {
+    if user.isNew {
+      println("User signed up and logged in through Facebook!")
+    } else {
+      println("User logged in through Facebook!")
+    }
+  } else {
+    println("Uh oh. The user cancelled the Facebook login.")
+  }
+})
 
 //Creating a new exercise
 
