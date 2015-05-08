@@ -13,10 +13,15 @@ import Parse
 
 //global structure consist basic excercise settings
 struct exeSetting{
-    static var exeTime:Double = 1.0;
-    static var restTime:Double = 1.0;
+    static var exeTime:Double = 10.0;
+    static var restTime:Double = 5.0;
     static var sound:Double = 50;
-    static var cycle:Int = 1
+    static var cycle:Int = 2
+}
+
+struct credentials{
+    static var usernameC:String = "3800"
+    static var passwordC:String = "deco"
 }
 
 @UIApplicationMain

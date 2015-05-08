@@ -18,7 +18,7 @@ class settingScreen: UIViewController, UITableViewDelegate, UITableViewDataSourc
     
     @IBOutlet var tableView: UITableView!
     @IBOutlet var navBarSetting: UINavigationItem!
-    var items: [String] = ["Excercise", "Rest", "Sound", "help"]
+    var items: [String] = ["Excercise", "Rest", "Sound", "cycle"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,7 +32,6 @@ class settingScreen: UIViewController, UITableViewDelegate, UITableViewDataSourc
     
     @objc func dismissKeyboard() {
         view.endEditing(true)
-        println("adfasdfa")
     }
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.items.count;
@@ -51,9 +50,9 @@ class settingScreen: UIViewController, UITableViewDelegate, UITableViewDataSourc
     
     @objc func savedata(){
         exeSetting.exeTime = (exeVal.text as NSString).doubleValue
-        exeSetting.restTime = (exeVal.text as NSString).doubleValue
-        exeSetting.sound = (exeVal.text as NSString).doubleValue
-        exeSetting.cycle = (exeVal.text as NSString).integerValue
+        exeSetting.restTime = (restVal.text as NSString).doubleValue
+        exeSetting.sound = (soundVal.text as NSString).doubleValue
+        exeSetting.cycle = (cycleVal.text as NSString).integerValue
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let startScreen = storyboard.instantiateViewControllerWithIdentifier("startScreen") as! UIViewController
         //presentViewController(startScreen, animated: true, completion: nil)

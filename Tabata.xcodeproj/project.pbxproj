@@ -18,6 +18,7 @@
 		4DE3EE181ABA349000D7B6B2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DE3EE171ABA349000D7B6B2 /* Images.xcassets */; };
 		4DE3EE1B1ABA349000D7B6B2 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DE3EE191ABA349000D7B6B2 /* LaunchScreen.xib */; };
 		4DE3EE271ABA349000D7B6B2 /* TabataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE3EE261ABA349000D7B6B2 /* TabataTests.swift */; };
+		EB32F36A1AFA375200422BFC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB32F3691AFA375200422BFC /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		4DE3EE201ABA349000D7B6B2 /* TabataTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TabataTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DE3EE251ABA349000D7B6B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4DE3EE261ABA349000D7B6B2 /* TabataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabataTests.swift; sourceTree = "<group>"; };
+		EB32F3691AFA375200422BFC /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = ../LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 		4DE3EE0D1ABA349000D7B6B2 /* Tabata */ = {
 			isa = PBXGroup;
 			children = (
+				EB32F3691AFA375200422BFC /* LoginViewController.swift */,
 				4DD305BF1AC62808005E5B18 /* CircleProgressView.swift */,
 				4DE3EE101ABA349000D7B6B2 /* AppDelegate.swift */,
 				4DAA6B2B1AD7F7ED00BA4486 /* Timer.swift */,
@@ -228,6 +231,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB32F36A1AFA375200422BFC /* LoginViewController.swift in Sources */,
 				4DE3EE131ABA349000D7B6B2 /* timerScreen.swift in Sources */,
 				4DDEF2571AE870EF00C07AA8 /* startScreen.swift in Sources */,
 				4D851CA51AECA5F100B0A039 /* settingScreen.swift in Sources */,
