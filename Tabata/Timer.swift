@@ -23,20 +23,22 @@ Count Down Timer Initialized
 public class Timer {
     
     private struct ExcerciseInfo {
-        var counter: Double!
         var exeTime: Double!
         var cycle: Int!
         var restTime:Double!
-        var mode:Int;
+        var mode:Int
     }
     
     var circleProgressBar: CircleProgressView!
     var timerLabel: UILabel!
-    private var exerciseInfo: ExcerciseInfo!
     var player : AVAudioPlayer!
+    var startTime = NSTimeInterval()
+    
+    private var exerciseInfo: ExcerciseInfo!
     
     init(counter: Double, cycle: Int, restTime: Double, circleProgressBar: CircleProgressView, timerLabel: UILabel){
-        self.exerciseInfo = ExcerciseInfo(counter: counter, exeTime: counter, cycle: cycle, restTime: restTime, mode: 0)
+        self.startTime = NSDate.timeIntervalSinceReferenceDate()
+        self.exerciseInfo = ExcerciseInfo(exeTime: counter, cycle: cycle, restTime: restTime, mode: 0)
         self.circleProgressBar = circleProgressBar
         self.timerLabel = timerLabel
     }
@@ -50,31 +52,16 @@ public class Timer {
     */
     public func timerNotation(timeInSec time: Double) -> String{
         //transforming seconds to hh:mm:ss format
-        var hour:Int = Int(time/3600)
-        var min:Int =  (Int(time) - 3600*hour)/60
-        var sec:Int =  Int(time) - 3600*hour - min*60
-        var mil:Int = Int((time - Double(hour) - Double(min) - Double(sec))*100)
-        var strhour:String = String(hour)
-        var strmin:String = String(min)
-        var strsec:String = String(sec)
-        var strmil:String = String(mil)
+        let hour = Int(time/3600)
+        let min =  (Int(time) - 3600*hour)/60
+        let sec =  Int(time) - 3600*hour - min*60
+        let mil = Int((time - Double(hour) - Double(min) - Double(sec))*100)
         
         //if a value is less than 10, add zero to maintain two digits notation; hh:mm:ss, instead of h:mm:ss, h:m:s or etc
-        if (hour < 10) {
-            strhour = "0" + strhour
-        }
-        
-        if (min < 10 || min == 0){
-            strmin = "0" + strmin
-        }
-        
-        if (sec < 10){
-            strsec = "0" + strsec
-        }
-        
-        if (mil < 10){
-            strmil = "0" + strmil
-        }
+        var strhour = hour < 10 ?  "0" + String(hour) : String(hour)
+        var strmin =  min < 10 || min == 0 ? "0" + String(min) : String(min)
+        var strsec =  sec < 10 ? "0" + String(sec) : String(sec)
+        var strmil = mil < 10 ? "0" + String(mil) : String(mil)
         
         return strmin + ":" + strsec + ":" + strmil
     }
@@ -83,34 +70,34 @@ public class Timer {
     A function decrement timer by 0.01, but only updates timer label every 1 second.
     */
     @objc func timerDecrement(){
+        var currentTime = NSDate.timeIntervalSinceReferenceDate()
+        var elapsedTime = currentTime - startTime
         
-        //minus counter from 0.01
-        exerciseInfo.counter = exerciseInfo.counter - 0.01;
+        //calculate amount of time left
+        var counter = exerciseInfo.mode == 0 ? exerciseInfo.exeTime - elapsedTime : exerciseInfo.restTime - elapsedTime
         //update circular progress bar
         if (exerciseInfo.mode == 0) {
-            circleProgressBar.progress = 1 - (Double(exerciseInfo.counter)/Double(exerciseInfo.exeTime))
+            circleProgressBar.progress = 1 - (Double(counter)/Double(exerciseInfo.exeTime))
         } else {
-            circleProgressBar.progress = 1 - (Double(exerciseInfo.counter)/Double(exerciseInfo.restTime))
+            circleProgressBar.progress = 1 - (Double(counter)/Double(exerciseInfo.restTime))
         }
         
         //update timer label but only in with integer
-        timerLabel.text = timerNotation(timeInSec: exerciseInfo.counter)
+        timerLabel.text = timerNotation(timeInSec: counter)
         
         if(exerciseInfo.cycle > 0){
             //if a counter still have remaining time, coundown go on
-            if(exerciseInfo.counter > 0){
+            if(counter > 0){
                 NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: "timerDecrement", userInfo: nil, repeats: false)
                 //if timer is end, recreate time picker.
             } else {
                 if (exerciseInfo.mode == 0){
-                    exerciseInfo.counter = exerciseInfo.restTime
-                    exerciseInfo.cycle  = exerciseInfo.cycle - 1;
+                    exerciseInfo.cycle  = exerciseInfo.cycle - 1
                     exerciseInfo.mode = 1
                 } else {
-                    exerciseInfo.counter = exerciseInfo.exeTime
                     exerciseInfo.mode = 0
                 }
-                
+                self.startTime = NSDate.timeIntervalSinceReferenceDate()
                 NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: "timerDecrement", userInfo: nil, repeats: false)
                 
             }
