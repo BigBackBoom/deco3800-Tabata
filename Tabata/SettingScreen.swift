@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class settingScreen: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class SettingScreen: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     var exeVal: UITextField!
     var restVal: UITextField!

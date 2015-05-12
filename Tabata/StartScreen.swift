@@ -9,13 +9,12 @@
 import Foundation
 import UIKit
 
-class startScreen: UIViewController {
+class StartScreen: UIViewController {
     
     @IBOutlet var startButton:UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        println(exeSetting.exeTime); //test
         
     }
     
