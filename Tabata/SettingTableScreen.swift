@@ -17,6 +17,7 @@ class SettingTableScreen: UITableViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tableView.contentInset = UIEdgeInsetsMake(20.0, 0.0, 0.0, 0.0)
         exeVal.text = String(stringInterpolationSegment: exeSetting.exeTime)
         restVal.text = String(stringInterpolationSegment: exeSetting.restTime)
         cycleVal.text = String(stringInterpolationSegment: exeSetting.cycle)

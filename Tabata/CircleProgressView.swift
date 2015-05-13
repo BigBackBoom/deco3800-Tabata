@@ -93,7 +93,7 @@ import UIKit
         // background Drawing
         trackBackgroundColor.setFill()
         let circlePath = UIBezierPath(ovalInRect: CGRectMake(innerRect.minX, innerRect.minY, CGRectGetWidth(innerRect), CGRectGetHeight(innerRect)))
-        circlePath.fill();
+        circlePath.fill()
         
         if trackBorderWidth > 0 {
             circlePath.lineWidth = trackBorderWidth

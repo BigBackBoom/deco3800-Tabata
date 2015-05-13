@@ -157,12 +157,6 @@
         <!--Setting Table Screen-->
         <scene sceneID="NDh-DU-UmC">
             <objects>
-                <tapGestureRecognizer id="wyI-9x-2xs">
-                    <connections>
-                        <action selector="dismissKeyboard" destination="Mag-dY-7zQ" id="deL-9c-JY1"/>
-                    </connections>
-                </tapGestureRecognizer>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="E0G-yZ-mwH" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="Mag-dY-7zQ" customClass="SettingTableScreen" customModule="Tabata" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="45" sectionHeaderHeight="22" sectionFooterHeight="22" id="pXg-Cv-cq0">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
@@ -233,6 +227,12 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="DKS-S5-TsZ" id="7bJ-Cs-WtO">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cycles" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8pJ-zc-Xyl">
+                                                    <rect key="frame" x="28" y="11" width="52" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LK1-jN-vQB">
                                                     <rect key="frame" x="472" y="7" width="60" height="30"/>
                                                     <constraints>
@@ -247,12 +247,6 @@
                                                         </mask>
                                                     </variation>
                                                 </textField>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cycles" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8pJ-zc-Xyl">
-                                                    <rect key="frame" x="28" y="11" width="52" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="centerY" secondItem="LK1-jN-vQB" secondAttribute="centerY" id="8EN-Mx-Qef"/>
@@ -309,6 +303,12 @@
                         <outlet property="restVal" destination="4f8-Wx-W6h" id="sa7-kT-VUd"/>
                     </connections>
                 </tableViewController>
+                <tapGestureRecognizer id="wyI-9x-2xs">
+                    <connections>
+                        <action selector="dismissKeyboard" destination="Mag-dY-7zQ" id="deL-9c-JY1"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="E0G-yZ-mwH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-850" y="1150"/>
         </scene>

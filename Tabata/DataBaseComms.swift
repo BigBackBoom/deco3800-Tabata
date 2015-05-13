@@ -39,7 +39,7 @@ func signUp(name:String, pass:String, email:String){
             println(errorString)
         } else {
             // Hooray! Let them use the app now.
-            println("Account has been successfully created");
+            println("Account has been successfully created")
         }
     }
 }

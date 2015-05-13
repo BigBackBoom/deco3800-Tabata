@@ -67,7 +67,7 @@ public class Timer {
     }
     
     /**
-    A function decrement timer by 0.01, but only updates timer label every 1 second.
+        the timer is called and find remaining time from current time and a timer started time.
     */
     @objc func timerDecrement(){
         var currentTime = NSDate.timeIntervalSinceReferenceDate()
@@ -89,8 +89,8 @@ public class Timer {
             //if a counter still have remaining time, coundown go on
             if(counter > 0){
                 NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: "timerDecrement", userInfo: nil, repeats: false)
-                //if timer is end, recreate time picker.
             } else {
+                //check mode of timer and decide whether going into exercise or rest
                 if (exerciseInfo.mode == 0){
                     exerciseInfo.cycle  = exerciseInfo.cycle - 1
                     exerciseInfo.mode = 1
@@ -109,13 +109,13 @@ public class Timer {
     }
     
     /**
-    This function triggers countdown timer.
-    Codes will delete timerpicker interface and replace with countdown label.
-    Circularbar will be initialized and start filling the bar.
-    At last, it calls countdown function to start actual counting down.
+        This function triggers countdown timer.
+        Codes will delete timerpicker interface and replace with countdown label.
+        Circularbar will be initialized and start filling the bar.
+        At last, it calls countdown function to start actual counting down.
     */
     
-    func startTimer(){
+    public func startTimer(){
         
         //audio Test
         let fileString = NSBundle.mainBundle().pathForResource("timlim", ofType: "mp3")
