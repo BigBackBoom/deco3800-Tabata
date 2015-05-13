@@ -21,6 +21,7 @@
 		4DE3EE1B1ABA349000D7B6B2 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DE3EE191ABA349000D7B6B2 /* LaunchScreen.xib */; };
 		4DE3EE271ABA349000D7B6B2 /* TabataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE3EE261ABA349000D7B6B2 /* TabataTests.swift */; };
 		BC4F11691CE75FA19DE30B38 /* libPods-Tabata.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2935AE491EC6C8DBBF01C058 /* libPods-Tabata.a */; };
+		EBE591681B0417AB00F55F03 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE591671B0417AB00F55F03 /* SignUpViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 		4DE3EE201ABA349000D7B6B2 /* TabataTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TabataTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DE3EE251ABA349000D7B6B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4DE3EE261ABA349000D7B6B2 /* TabataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabataTests.swift; sourceTree = "<group>"; };
+		EBE591671B0417AB00F55F03 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		F5E8EC1505E99E1F906C606C /* Pods-Tabata.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tabata.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tabata/Pods-Tabata.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -101,6 +103,7 @@
 			children = (
 				4DCE25B11B021043006E5A53 /* DataBaseComms.swift */,
 				4DCE25AF1B021020006E5A53 /* LoginViewController.swift */,
+				EBE591671B0417AB00F55F03 /* SignUpViewController.swift */,
 				4DD305BF1AC62808005E5B18 /* CircleProgressView.swift */,
 				4DE3EE101ABA349000D7B6B2 /* AppDelegate.swift */,
 				4DAA6B2B1AD7F7ED00BA4486 /* Timer.swift */,
@@ -301,6 +304,7 @@
 				4DDEF2571AE870EF00C07AA8 /* StartScreen.swift in Sources */,
 				4DE3EE111ABA349000D7B6B2 /* AppDelegate.swift in Sources */,
 				4DD305C01AC62808005E5B18 /* CircleProgressView.swift in Sources */,
+				EBE591681B0417AB00F55F03 /* SignUpViewController.swift in Sources */,
 				4DAA6B2C1AD7F7ED00BA4486 /* Timer.swift in Sources */,
 				4D5DC1D41B03683700404427 /* SettingTableScreen.swift in Sources */,
 			);
