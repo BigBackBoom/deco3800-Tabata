@@ -11,8 +11,8 @@ import AVFoundation
 
 class TimerViewController: UIViewController {
     
-    @IBOutlet var circleProgressBar: CircleProgressView!
-    @IBOutlet var startButton: UIButton!
+    @IBOutlet weak var circleProgressBar: CircleProgressView!
+    @IBOutlet weak var startButton: UIButton!
     
     var timerLabel: UILabel!
     var countingTimer: Timer!

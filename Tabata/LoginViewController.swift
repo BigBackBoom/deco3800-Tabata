@@ -15,10 +15,6 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("login:")
-        //println(signUp("kodai", pass:"1234", email:"test@test.com") );
-        println(logIn("kodai", pass:"1234"))
-        // Do any additional setup after loading the view. hahaha dumb ass
     }
     
     override func didReceiveMemoryWarning() {

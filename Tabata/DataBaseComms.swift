@@ -6,25 +6,29 @@
 //  Copyright (c) 2015 deco3800. All rights reserved.
 //
 
-func logIn(name:String, pass:String){
-    var result:Bool!
-    
-    PFUser.logInWithUsernameInBackground(name, password: pass, block: {
-        (user: PFUser?, error: NSError?) -> Void in
-        if user != nil {
-            // Do stuff after successful login.
-            //result = true
-            println("login successful")
-            
-        } else {
-            // The login failed. Check error to see why.
-            //result = false
-            println("login failed")
-            
-        }
-    })
+
+/**
+Login function using two parameter
+
+:param: username A user name of the account that the client would like to log in with
+:param: password A password to verify username
+
+:returns: return PFUser if sucessful. Return nil if username or password is wrong
+
+*/
+
+func logIn(name:String, pass:String) -> PFUser?{
+    return PFUser.logInWithUsername(name, password: pass)
 }
 
+/**
+Asynchronous signup
+
+:param: username of the account
+:param: password A password to verify this username
+:param: email A email for contact
+
+*/
 func signUp(name:String, pass:String, email:String){
     
     var user = PFUser()
@@ -44,8 +48,19 @@ func signUp(name:String, pass:String, email:String){
     }
 }
 
-func createExercise(name:String, length:Int, rest:Int, sets:Int)
-{
+/**
+Create new exercise record on Database
+
+:param: name A name of the exercise
+:param: length Duration of exercise
+:param: rest Rest duration between exercise
+:param: sets Number of sets user did
+
+:returns: return true if successful
+
+*/
+
+func createExercise(name:String, length:Int, rest:Int, sets:Int) -> Bool{
     var currentUser = PFUser.currentUser()
     var exercise = PFObject(className:"Exercise")
     exercise["User"] = currentUser
@@ -53,35 +68,38 @@ func createExercise(name:String, length:Int, rest:Int, sets:Int)
     exercise["Exercise_length"] = length
     exercise["Exercise_rest_length"] = rest
     exercise["Exercise_set"] = sets
-    exercise.pinInBackground()
+    return exercise.pin()
 }
 
-//Retrieve exercises - this one just returns the first one found
+/**
+Retrieve latest exercise.
 
-func retrieveExercise() -> PFObject?
-{
+:returns: PFObject of contains data or nil
+
+*/
+func retrieveExercise() -> PFObject? {
+    
     var currentUser:PFUser!  = PFUser.currentUser()
     let userId = currentUser.objectId
-    var result:PFObject?
-    
     var query = PFQuery(className:"Exercise")
+    
     query.fromLocalDatastore()
     query.whereKey("User", equalTo: userId!)
     
-    query.getFirstObjectInBackgroundWithBlock {
-        (object: PFObject?, error: NSError?) -> Void in
-        if error != nil || object == nil {
-            result = nil
-        } else {
-            // The find succeeded.
-            result = object
-        }
-    }
-    return result
+    return query.getFirstObject()
 }
 
-//Edit excercise
+/**
+Edit excercise
 
+:param: PFObject Current Exercise
+:param: name A name of the exercise
+:param: length Duration of exercise
+:param: rest Rest duration between exercise
+:param: sets Number of sets user did
+
+
+*/
 func editExercise(currentExer:PFObject, name:String, length:Int, rest:Int, sets:Int)
 {
     currentExer["Exercise_name"] = name
@@ -91,8 +109,12 @@ func editExercise(currentExer:PFObject, name:String, length:Int, rest:Int, sets:
     currentExer.pinInBackground()
 }
 
-//Log exercise
+/**
+Log exercise
 
+:param: currentExercise A currently working exercise to log
+
+**/
 func logExercise(currentExercise:PFObject) {
     
     var currentUser = PFUser.currentUser()
@@ -109,6 +131,15 @@ func logExercise(currentExercise:PFObject) {
         }
     }
 }
+
+/**
+Retrieve log exercise
+
+:param: currentExercise A currently working exercise to log
+
+:returns: PFObject
+
+**/
 
 func retrieveLog(currentExercise:PFObject) -> PFObject?
 {

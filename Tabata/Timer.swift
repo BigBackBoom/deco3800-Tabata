@@ -29,8 +29,8 @@ public class Timer {
         var mode:Int
     }
     
-    var circleProgressBar: CircleProgressView!
-    var timerLabel: UILabel!
+    weak var circleProgressBar: CircleProgressView!
+    weak var timerLabel: UILabel!
     var player : AVAudioPlayer!
     var startTime = NSTimeInterval()
     
