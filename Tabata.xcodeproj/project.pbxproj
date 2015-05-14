@@ -20,6 +20,7 @@
 		4DE3EE181ABA349000D7B6B2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DE3EE171ABA349000D7B6B2 /* Images.xcassets */; };
 		4DE3EE1B1ABA349000D7B6B2 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DE3EE191ABA349000D7B6B2 /* LaunchScreen.xib */; };
 		4DE3EE271ABA349000D7B6B2 /* TabataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE3EE261ABA349000D7B6B2 /* TabataTests.swift */; };
+		63463289C3441732328DCD01 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CC3F2BCF297EE9D855E5C4FE /* libPods.a */; };
 		BC4F11691CE75FA19DE30B38 /* libPods-Tabata.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2935AE491EC6C8DBBF01C058 /* libPods-Tabata.a */; };
 		EBE591681B0417AB00F55F03 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE591671B0417AB00F55F03 /* SignUpViewController.swift */; };
 		FDBF773B9C463CEB36E90C73 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CC3F2BCF297EE9D855E5C4FE /* libPods.a */; };
@@ -69,6 +70,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BC4F11691CE75FA19DE30B38 /* libPods-Tabata.a in Frameworks */,
+				63463289C3441732328DCD01 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -313,7 +315,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Tabata/Pods-Tabata-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E774FFC8703010687B3FA593 /* Copy Pods Resources */ = {
