@@ -9,7 +9,7 @@
 import UIKit 
 import AVFoundation
 
-class TimerScreen: UIViewController {
+class TimerViewController: UIViewController {
     
     @IBOutlet var circleProgressBar: CircleProgressView!
     @IBOutlet var startButton: UIButton!

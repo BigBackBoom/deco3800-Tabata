@@ -36,7 +36,7 @@ public class Timer {
     
     private var exerciseInfo: ExcerciseInfo!
     
-    init(counter: Double, cycle: Int, restTime: Double, circleProgressBar: CircleProgressView, timerLabel: UILabel){
+    public init(counter: Double, cycle: Int, restTime: Double, circleProgressBar: CircleProgressView, timerLabel: UILabel?){
         self.startTime = NSDate.timeIntervalSinceReferenceDate()
         self.exerciseInfo = ExcerciseInfo(exeTime: counter, cycle: cycle, restTime: restTime, mode: 0)
         self.circleProgressBar = circleProgressBar
@@ -52,13 +52,11 @@ public class Timer {
     */
     public func timerNotation(timeInSec time: Double) -> String{
         //transforming seconds to hh:mm:ss format
-        let hour = Int(time/3600)
-        let min =  (Int(time) - 3600*hour)/60
-        let sec =  Int(time) - 3600*hour - min*60
-        let mil = Int((time - Double(hour) - Double(min) - Double(sec))*100)
+        let min = Int(time / 60)
+        let sec = Int(time%60)
+        let mil = Int(round((time - Double(min * 60) - Double(sec))*100))
         
         //if a value is less than 10, add zero to maintain two digits notation; hh:mm:ss, instead of h:mm:ss, h:m:s or etc
-        var strhour = hour < 10 ?  "0" + String(hour) : String(hour)
         var strmin =  min < 10 || min == 0 ? "0" + String(min) : String(min)
         var strsec =  sec < 10 ? "0" + String(sec) : String(sec)
         var strmil = mil < 10 ? "0" + String(mil) : String(mil)

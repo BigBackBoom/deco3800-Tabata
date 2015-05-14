@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="mlV-wR-KJs">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="XsM-Fb-7OS">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -24,7 +24,7 @@
                                     <constraint firstAttribute="width" constant="62" id="iEv-LM-9q1"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PHs-LS-1Uw">
@@ -142,7 +142,7 @@
                                     <constraint firstAttribute="height" constant="21" id="DvV-B8-lIy"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tEW-Ex-0ou">
@@ -182,10 +182,10 @@
             </objects>
             <point key="canvasLocation" x="-1077" y="389"/>
         </scene>
-        <!--Start Screen-->
+        <!--Start View Controller-->
         <scene sceneID="2J8-HO-lDe">
             <objects>
-                <viewController storyboardIdentifier="startScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="XsM-Fb-7OS" customClass="StartScreen" customModule="Tabata" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="startScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="XsM-Fb-7OS" customClass="StartViewController" customModule="Tabata" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="WVa-Gx-b4f"/>
                         <viewControllerLayoutGuide type="bottom" id="d7e-Z5-ZaJ"/>
@@ -235,10 +235,10 @@
             </objects>
             <point key="canvasLocation" x="-316" y="364"/>
         </scene>
-        <!--Timer Screen-->
+        <!--Timer View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="timerScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="TimerScreen" customModule="Tabata" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="timerScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="TimerViewController" customModule="Tabata" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -271,10 +271,10 @@
             </objects>
             <point key="canvasLocation" x="411" y="-420"/>
         </scene>
-        <!--Setting Table Screen-->
+        <!--Setting Table View Controller-->
         <scene sceneID="NDh-DU-UmC">
             <objects>
-                <tableViewController id="Mag-dY-7zQ" customClass="SettingTableScreen" customModule="Tabata" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="Mag-dY-7zQ" customClass="SettingTableViewController" customModule="Tabata" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="45" sectionHeaderHeight="22" sectionFooterHeight="22" id="pXg-Cv-cq0">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -293,8 +293,8 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Q4Z-t6-tmT">
-                                                    <rect key="frame" x="471" y="8" width="60" height="30"/>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Q4Z-t6-tmT">
+                                                    <rect key="frame" x="472" y="8" width="60" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="60" id="bDv-aq-t2F"/>
                                                     </constraints>
@@ -415,9 +415,9 @@
                         </connections>
                     </tableView>
                     <connections>
-                        <outlet property="cycleVal" destination="LK1-jN-vQB" id="AyG-Au-g4g"/>
-                        <outlet property="exeVal" destination="Q4Z-t6-tmT" id="FVu-0a-d1l"/>
-                        <outlet property="restVal" destination="4f8-Wx-W6h" id="sa7-kT-VUd"/>
+                        <outlet property="cycleVal" destination="LK1-jN-vQB" id="7hQ-eW-62P"/>
+                        <outlet property="exeVal" destination="Q4Z-t6-tmT" id="94C-Cp-aQ5"/>
+                        <outlet property="restVal" destination="4f8-Wx-W6h" id="Icp-X5-tVk"/>
                     </connections>
                 </tableViewController>
                 <tapGestureRecognizer id="wyI-9x-2xs">

@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class SettingTableScreen: UITableViewController{
+class SettingTableViewController: UITableViewController{
     
     @IBOutlet weak var exeVal: UITextField!
     @IBOutlet weak var restVal: UITextField!

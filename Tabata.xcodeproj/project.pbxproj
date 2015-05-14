@@ -7,15 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4D5DC1D41B03683700404427 /* SettingTableScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5DC1D31B03683700404427 /* SettingTableScreen.swift */; };
+		4D5DC1D41B03683700404427 /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5DC1D31B03683700404427 /* SettingTableViewController.swift */; };
+		4D63C6B11B0460A0003E94D8 /* TimerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D63C6B01B0460A0003E94D8 /* TimerTests.swift */; };
 		4DAA6B2C1AD7F7ED00BA4486 /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DAA6B2B1AD7F7ED00BA4486 /* Timer.swift */; };
 		4DCE25B01B021020006E5A53 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCE25AF1B021020006E5A53 /* LoginViewController.swift */; };
 		4DCE25B21B021043006E5A53 /* DataBaseComms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCE25B11B021043006E5A53 /* DataBaseComms.swift */; };
 		4DD305C01AC62808005E5B18 /* CircleProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD305BF1AC62808005E5B18 /* CircleProgressView.swift */; };
 		4DDEF2551AE8594D00C07AA8 /* timlim.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4DDEF2541AE8594D00C07AA8 /* timlim.mp3 */; };
-		4DDEF2571AE870EF00C07AA8 /* StartScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DDEF2561AE870EF00C07AA8 /* StartScreen.swift */; };
+		4DDEF2571AE870EF00C07AA8 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DDEF2561AE870EF00C07AA8 /* StartViewController.swift */; };
 		4DE3EE111ABA349000D7B6B2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE3EE101ABA349000D7B6B2 /* AppDelegate.swift */; };
-		4DE3EE131ABA349000D7B6B2 /* TimerScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE3EE121ABA349000D7B6B2 /* TimerScreen.swift */; };
+		4DE3EE131ABA349000D7B6B2 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE3EE121ABA349000D7B6B2 /* TimerViewController.swift */; };
 		4DE3EE161ABA349000D7B6B2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DE3EE141ABA349000D7B6B2 /* Main.storyboard */; };
 		4DE3EE181ABA349000D7B6B2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DE3EE171ABA349000D7B6B2 /* Images.xcassets */; };
 		4DE3EE1B1ABA349000D7B6B2 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DE3EE191ABA349000D7B6B2 /* LaunchScreen.xib */; };
@@ -41,17 +42,18 @@
 		1B8CB0D602B007B256C143B8 /* Pods-Tabata.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tabata.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tabata/Pods-Tabata.release.xcconfig"; sourceTree = "<group>"; };
 		2935AE491EC6C8DBBF01C058 /* libPods-Tabata.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Tabata.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D32A5D51AFB43F00030DDED /* Tabata-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tabata-Bridging-Header.h"; sourceTree = "<group>"; };
-		4D5DC1D31B03683700404427 /* SettingTableScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingTableScreen.swift; sourceTree = "<group>"; };
+		4D5DC1D31B03683700404427 /* SettingTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingTableViewController.swift; sourceTree = "<group>"; };
+		4D63C6B01B0460A0003E94D8 /* TimerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerTests.swift; sourceTree = "<group>"; };
 		4DAA6B2B1AD7F7ED00BA4486 /* Timer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
 		4DCE25AF1B021020006E5A53 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		4DCE25B11B021043006E5A53 /* DataBaseComms.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataBaseComms.swift; sourceTree = "<group>"; };
 		4DD305BF1AC62808005E5B18 /* CircleProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleProgressView.swift; sourceTree = "<group>"; };
 		4DDEF2541AE8594D00C07AA8 /* timlim.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = timlim.mp3; sourceTree = "<group>"; };
-		4DDEF2561AE870EF00C07AA8 /* StartScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartScreen.swift; sourceTree = "<group>"; };
+		4DDEF2561AE870EF00C07AA8 /* StartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		4DE3EE0B1ABA349000D7B6B2 /* Tabata.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tabata.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DE3EE0F1ABA349000D7B6B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4DE3EE101ABA349000D7B6B2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4DE3EE121ABA349000D7B6B2 /* TimerScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerScreen.swift; sourceTree = "<group>"; };
+		4DE3EE121ABA349000D7B6B2 /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
 		4DE3EE151ABA349000D7B6B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4DE3EE171ABA349000D7B6B2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		4DE3EE1A1ABA349000D7B6B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -114,9 +116,9 @@
 				4DD305BF1AC62808005E5B18 /* CircleProgressView.swift */,
 				4DE3EE101ABA349000D7B6B2 /* AppDelegate.swift */,
 				4DAA6B2B1AD7F7ED00BA4486 /* Timer.swift */,
-				4DE3EE121ABA349000D7B6B2 /* TimerScreen.swift */,
-				4DDEF2561AE870EF00C07AA8 /* StartScreen.swift */,
-				4D5DC1D31B03683700404427 /* SettingTableScreen.swift */,
+				4DE3EE121ABA349000D7B6B2 /* TimerViewController.swift */,
+				4DDEF2561AE870EF00C07AA8 /* StartViewController.swift */,
+				4D5DC1D31B03683700404427 /* SettingTableViewController.swift */,
 				4DE3EE141ABA349000D7B6B2 /* Main.storyboard */,
 				4DE3EE171ABA349000D7B6B2 /* Images.xcassets */,
 				4DE3EE191ABA349000D7B6B2 /* LaunchScreen.xib */,
@@ -139,6 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				4DE3EE261ABA349000D7B6B2 /* TabataTests.swift */,
+				4D63C6B01B0460A0003E94D8 /* TimerTests.swift */,
 				4DE3EE241ABA349000D7B6B2 /* Supporting Files */,
 			);
 			path = TabataTests;
@@ -341,14 +344,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				4DCE25B01B021020006E5A53 /* LoginViewController.swift in Sources */,
-				4DE3EE131ABA349000D7B6B2 /* TimerScreen.swift in Sources */,
+				4DE3EE131ABA349000D7B6B2 /* TimerViewController.swift in Sources */,
 				4DCE25B21B021043006E5A53 /* DataBaseComms.swift in Sources */,
-				4DDEF2571AE870EF00C07AA8 /* StartScreen.swift in Sources */,
+				4DDEF2571AE870EF00C07AA8 /* StartViewController.swift in Sources */,
 				4DE3EE111ABA349000D7B6B2 /* AppDelegate.swift in Sources */,
 				4DD305C01AC62808005E5B18 /* CircleProgressView.swift in Sources */,
 				EBE591681B0417AB00F55F03 /* SignUpViewController.swift in Sources */,
 				4DAA6B2C1AD7F7ED00BA4486 /* Timer.swift in Sources */,
-				4D5DC1D41B03683700404427 /* SettingTableScreen.swift in Sources */,
+				4D5DC1D41B03683700404427 /* SettingTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -357,6 +360,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4DE3EE271ABA349000D7B6B2 /* TabataTests.swift in Sources */,
+				4D63C6B11B0460A0003E94D8 /* TimerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
