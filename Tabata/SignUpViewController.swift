@@ -6,7 +6,7 @@
 
 //
 
-//  Created by Weng hou Chan on 14/05/2015.
+//  Created by Weng hou Chan & Kodai Kikuchi on 14/05/2015.
 
 //  Copyright (c) 2015 deco3800. All rights reserved.
 
@@ -20,6 +20,7 @@ class SignUpViewController: UIViewController {
     
     @IBOutlet weak var txtUsername: UITextField!
     @IBOutlet weak var txtPassword: UITextField!
+    @IBOutlet weak var txtEmail: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,22 +32,22 @@ class SignUpViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    
-    
     @IBAction func signupTapped(sender: AnyObject) {
-        var alertView:UIAlertView = UIAlertView()
-        //alertView.title = "Order Cancelled"
+        var alertController = UIAlertController(title: "Account is created", message: "You have successfully created an account.", preferredStyle: .Alert)
         
-        credentials.usernameC = (txtUsername.text as NSString) as String
-        credentials.passwordC = (txtPassword.text as NSString) as String
+        var username = txtUsername.text
+        var password = txtPassword.text
+        var email = txtEmail.text
         
-        alertView.message = "Account Created!"
-        alertView.delegate = self
-        alertView.addButtonWithTitle("OK")
-        alertView.show()
+        signUp(username, password, email)
         
-        self.dismissViewControllerAnimated(true, completion: nil)
+        let alertConfirm = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default){
+            (action:UIAlertAction!) -> Void in
+            self.dismissViewControllerAnimated(true, completion: nil)
         }
+        alertController.addAction(alertConfirm)
+        presentViewController(alertController, animated: true, completion: nil)
+    }
     
     
     

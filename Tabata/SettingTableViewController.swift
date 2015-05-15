@@ -11,16 +11,16 @@ import UIKit
 
 class SettingTableViewController: UITableViewController{
     
-    @IBOutlet weak var exeVal: UITextField!
-    @IBOutlet weak var restVal: UITextField!
-    @IBOutlet weak var cycleVal: UITextField!
+    @IBOutlet weak var txtExeTime: UITextField!
+    @IBOutlet weak var txtRestTime: UITextField!
+    @IBOutlet weak var txtCycle: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.contentInset = UIEdgeInsetsMake(20.0, 0.0, 0.0, 0.0)
-        exeVal.text = String(stringInterpolationSegment: exeSetting.exeTime)
-        restVal.text = String(stringInterpolationSegment: exeSetting.restTime)
-        cycleVal.text = String(stringInterpolationSegment: exeSetting.cycle)
+        txtExeTime.text = String(stringInterpolationSegment: exeSetting.exeTime)
+        txtRestTime.text = String(stringInterpolationSegment: exeSetting.restTime)
+        txtCycle.text = String(stringInterpolationSegment: exeSetting.cycle)
     
     }
     
@@ -34,9 +34,9 @@ class SettingTableViewController: UITableViewController{
     }
     
     @IBAction func saveData() {
-        exeSetting.exeTime = (exeVal.text as NSString).doubleValue
-        exeSetting.restTime = (restVal.text as NSString).doubleValue
-        exeSetting.cycle = (cycleVal.text as NSString).integerValue
+        exeSetting.exeTime = (txtExeTime.text as NSString).doubleValue
+        exeSetting.restTime = (txtRestTime.text as NSString).doubleValue
+        exeSetting.cycle = (txtCycle.text as NSString).integerValue
         //presentViewController(startScreen, animated: true, completion: nil)
         self.dismissViewControllerAnimated(true, completion: {})
     }

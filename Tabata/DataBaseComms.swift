@@ -17,8 +17,9 @@ Login function using two parameter
 
 */
 
-func logIn(name:String, pass:String) -> PFUser?{
-    return PFUser.logInWithUsername(name, password: pass)
+func logIn(name:String, pass:String) -> Bool{
+    
+    return PFUser.logInWithUsername(name, password: pass) != nil ? true : false
 }
 
 /**

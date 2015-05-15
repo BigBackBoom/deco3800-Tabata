@@ -22,44 +22,18 @@ class LoginViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func signinTapped(sender: UIButton){
-        var username:NSString = txtUsername.text
-        var password:NSString = txtPassword.text
+    @IBAction func loginTapped(sender: UIButton){
+        var username = txtUsername.text
+        var password = txtPassword.text
         
-        println(credentials.usernameC)
-        if ( username.isEqualToString(credentials.usernameC) && password.isEqualToString(credentials.passwordC)) {
-            
-            
+        if (!logIn(username, password)) {
+            var alertController = UIAlertController(title: "Login Failed", message: "You entered wrong username or password", preferredStyle: .Alert)
+            let alertConfirm = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default){
+                (action:UIAlertAction!) -> Void in
+            }
+            alertController.addAction(alertConfirm)
+            presentViewController(alertController, animated: true, completion: nil)
         }
-        else
-        {
-            self.dismissViewControllerAnimated(true, completion: nil)
-            var alertView:UIAlertView = UIAlertView()
-            alertView.title = "Login Failed!"
-            alertView.message = "Please enter Username and Password"
-            alertView.delegate = self
-            alertView.addButtonWithTitle("OK")
-            alertView.show()
-        }
-    }
-    
-    func logIn(name:String, pass:String) -> Bool{
-        var user: PFUser?
-        user = PFUser.logInWithUsername(name, password: pass)
-        if user != nil{
-            return true;
-        }else{
-            return false
-        }
-    }
-    
-    func signUp(name:String, pass:String, email:String) -> Bool{
-        var user = PFUser()
-        user.username = name
-        user.password = pass
-        user.email = email
-        
-        return user.signUp()
     }
     
     /*
