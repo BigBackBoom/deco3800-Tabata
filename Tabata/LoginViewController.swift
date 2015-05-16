@@ -26,7 +26,7 @@ class LoginViewController: UIViewController {
         var username = txtUsername.text
         var password = txtPassword.text
         
-        if (!logIn(username, password)) {
+        if (!login(username, password)) {
             var alertController = UIAlertController(title: "Login Failed", message: "You entered wrong username or password", preferredStyle: .Alert)
             let alertConfirm = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default){
                 (action:UIAlertAction!) -> Void in

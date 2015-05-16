@@ -17,7 +17,7 @@ Login function using two parameter
 
 */
 
-func logIn(name:String, pass:String) -> Bool{
+public func login(name:String, pass:String) -> Bool{
     
     return PFUser.logInWithUsername(name, password: pass) != nil ? true : false
 }
@@ -30,7 +30,7 @@ Asynchronous signup
 :param: email A email for contact
 
 */
-func signUp(name:String, pass:String, email:String){
+public func signUp(name:String, pass:String, email:String){
     
     var user = PFUser()
     user.username = name
@@ -61,7 +61,7 @@ Create new exercise record on Database
 
 */
 
-func createExercise(name:String, length:Int, rest:Int, sets:Int) -> Bool{
+public func createExercise(name:String, length:Int, rest:Int, sets:Int) -> Bool{
     var currentUser = PFUser.currentUser()
     var exercise = PFObject(className:"Exercise")
     exercise["User"] = currentUser
@@ -78,12 +78,11 @@ Retrieve latest exercise.
 :returns: PFObject of contains data or nil
 
 */
-func retrieveExercise() -> PFObject? {
+public func retrieveExercise() -> PFObject? {
     
     var currentUser:PFUser!  = PFUser.currentUser()
     let userId = currentUser.objectId
     var query = PFQuery(className:"Exercise")
-    
     query.fromLocalDatastore()
     query.whereKey("User", equalTo: userId!)
     
@@ -101,8 +100,7 @@ Edit excercise
 
 
 */
-func editExercise(currentExer:PFObject, name:String, length:Int, rest:Int, sets:Int)
-{
+public func editExercise(currentExer:PFObject, name:String, length:Int, rest:Int, sets:Int) {
     currentExer["Exercise_name"] = name
     currentExer["Exercise_length"] = length
     currentExer["Exercise_rest_length"] = rest
@@ -116,7 +114,7 @@ Log exercise
 :param: currentExercise A currently working exercise to log
 
 **/
-func logExercise(currentExercise:PFObject) {
+public func logExercise(currentExercise:PFObject) {
     
     var currentUser = PFUser.currentUser()
     var exercise_log = PFObject(className:"Exercise_Log")
@@ -142,8 +140,7 @@ Retrieve log exercise
 
 **/
 
-func retrieveLog(currentExercise:PFObject) -> PFObject?
-{
+public func retrieveLog(currentExercise:PFObject) -> PFObject? {
     var result:PFObject?
     var currentUser:PFUser! = PFUser.currentUser()
     let userId = currentUser.objectId
