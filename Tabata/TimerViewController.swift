@@ -13,6 +13,8 @@ class TimerViewController: UIViewController {
     
     @IBOutlet weak var circleProgressBar: CircleProgressView!
     @IBOutlet weak var startButton: UIButton!
+    @IBOutlet weak var currentCycleLabel: UILabel!
+    @IBOutlet weak var totalCyclesLabel: UILabel!
     
     var timerLabel: UILabel!
     var countingTimer: Timer!
@@ -22,15 +24,19 @@ class TimerViewController: UIViewController {
         
         //creating timer label programatically
         timerLabel = UILabel()
-        timerLabel.frame = CGRectMake(0, 0, 200, 21)
+        timerLabel.frame = CGRectMake(0, 0, 200, 200)
         timerLabel.center = CGPointMake(circleProgressBar.frame.width/2, circleProgressBar.frame.height/2)
         timerLabel.textAlignment = NSTextAlignment.Center
+        timerLabel.font = UIFont(name: timerLabel.font.fontName, size: 80)
+        timerLabel.textColor = UIColor.orangeColor()
         
         //initializing countdown timer
-        countingTimer = Timer(counter: exeSetting.exeTime,  cycle: exeSetting.cycle, restTime: exeSetting.restTime, circleProgressBar: circleProgressBar, timerLabel: timerLabel)
+        countingTimer = Timer(counter: exeSetting.exeTime,  cycle: exeSetting.cycle, restTime: exeSetting.restTime, circleProgressBar: circleProgressBar, timerLabel: timerLabel, currentCycleLabel: currentCycleLabel)
+        
+        totalCyclesLabel.text = String(exeSetting.cycle)
         
         //inserting timer label value, which is depending on user input(from timePicker)
-        timerLabel.text =  countingTimer.timerNotation(timeInSec: exeSetting.exeTime)
+        //timerLabel.text =  countingTimer.timerNotation(timeInSec: exeSetting.exeTime)
         circleProgressBar.addSubview(timerLabel)
         countingTimer.startTimer()
         
