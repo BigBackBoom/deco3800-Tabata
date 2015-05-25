@@ -17,6 +17,7 @@ Count Down Timer Initialized
 :param: circleProgressBar A progress bar class to be updated on controller view.
 :param: timerLabel A label interface to be updated on controller view.
 :param: timerPicker timePicker to add at the end of the timer on controller view.
+:param: setLabel A label interface to be updated on controller view.
 
 */
 
@@ -31,16 +32,18 @@ public class Timer {
     
     weak var circleProgressBar: CircleProgressView!
     weak var timerLabel: UILabel!
+    weak var currentCycleLabel: UILabel!
     var player : AVAudioPlayer!
     var startTime = NSTimeInterval()
     
     private var exerciseInfo: ExcerciseInfo!
     
-    public init(counter: Double, cycle: Int, restTime: Double, circleProgressBar: CircleProgressView, timerLabel: UILabel?){
+    public init(counter: Double, cycle: Int, restTime: Double, circleProgressBar: CircleProgressView, timerLabel: UILabel?, currentCycleLabel: UILabel?){
         self.startTime = NSDate.timeIntervalSinceReferenceDate()
         self.exerciseInfo = ExcerciseInfo(exeTime: counter, cycle: cycle, restTime: restTime, mode: 0)
         self.circleProgressBar = circleProgressBar
         self.timerLabel = timerLabel
+        self.currentCycleLabel = currentCycleLabel
     }
     
     /**
@@ -73,6 +76,7 @@ public class Timer {
         
         //calculate amount of time left
         var counter = exerciseInfo.mode == 0 ? exerciseInfo.exeTime - elapsedTime : exerciseInfo.restTime - elapsedTime
+        
         //update circular progress bar
         if (exerciseInfo.mode == 0) {
             circleProgressBar.progress = 1 - (Double(counter)/Double(exerciseInfo.exeTime))
@@ -80,8 +84,13 @@ public class Timer {
             circleProgressBar.progress = 1 - (Double(counter)/Double(exerciseInfo.restTime))
         }
         
+        // convert into minutes for timer display
+        let minutes = Int(round(counter))
+        let strMinutes = minutes > 9 ? String(stringInterpolationSegment: minutes):"0" + String(stringInterpolationSegment: minutes)
+        
         //update timer label but only in with integer
-        timerLabel.text = timerNotation(timeInSec: counter)
+        timerLabel.text = "0:\(strMinutes)" // first zero is a fake
+        currentCycleLabel.text = String(exerciseInfo.cycle)
         
         if(exerciseInfo.cycle > 0){
             //if a counter still have remaining time, coundown go on
@@ -101,6 +110,7 @@ public class Timer {
             }
             
         } else{
+            timerLabel.font = UIFont(name: timerLabel.font.fontName, size: 40)
             timerLabel.text = "Finished!"
         }
         
