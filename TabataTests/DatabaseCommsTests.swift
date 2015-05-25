@@ -23,13 +23,13 @@ class DatabaseCommsTests: XCTestCase {
         //Testing that login:: function return false
         XCTAssert(!login(username, password), "The reult need to be false")
         
-        username = "mike"
+        username = "testtest"
         password = "1234"
         //Testing login:: returns true
         XCTAssert(login(username, password), "The reult need to be true")
     }
     
-    /**func testSignUp() {
+    func testSignUp() {
         var username = "Hoge"
         var password = "deco3800"
         var email = "test@test.com"
@@ -47,7 +47,7 @@ class DatabaseCommsTests: XCTestCase {
         query.whereKey("username", equalTo: "Hoge")
         
         println(query.getFirstObject())
-    }**/
+    }
     
     func testPerformanceExample() {
         // This is an example of a performance test case.
