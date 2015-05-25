@@ -30,14 +30,16 @@ Asynchronous signup
 :param: email A email for contact
 
 */
-public func signUp(name:String, pass:String, email:String){
+public func signUp(name:String, pass:String, email:String) -> Bool{
     
     var user = PFUser()
     user.username = name
     user.password = pass
     user.email = email
     
-    user.signUpInBackgroundWithBlock {
+    return user.signUp()
+    
+    /*user.signUpInBackgroundWithBlock {
         (succeeded: Bool, error: NSError?) -> Void in
         if let error = error {
             let errorString = error.userInfo?["error"] as? NSString
@@ -46,7 +48,7 @@ public func signUp(name:String, pass:String, email:String){
             // Hooray! Let them use the app now.
             println("Account has been successfully created")
         }
-    }
+    }*/
 }
 
 /**

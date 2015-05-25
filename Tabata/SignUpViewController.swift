@@ -33,18 +33,26 @@ class SignUpViewController: UIViewController {
     }
     
     @IBAction func signupTapped(sender: AnyObject) {
-        var alertController = UIAlertController(title: "Account is created", message: "You have successfully created an account.", preferredStyle: .Alert)
+        var alertController:UIAlertController
+        var result:Bool!
+        var handler:(UIAlertAction!)->Void;
         
         var username = txtUsername.text
         var password = txtPassword.text
         var email = txtEmail.text
         
-        signUp(username, password, email)
+        result = signUp(username, password, email)
         
-        let alertConfirm = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default){
-            (action:UIAlertAction!) -> Void in
-            self.dismissViewControllerAnimated(true, completion: nil)
+        if(result == true){
+            alertController = UIAlertController(title: "Account is created", message: "You have successfully created an account.", preferredStyle: .Alert)
+            handler = {(action:UIAlertAction!) in self.dismissViewControllerAnimated(true, completion: nil)}
+            
+        } else {
+            alertController = UIAlertController(title: "Account is not created", message: "Please try again", preferredStyle: .Alert)
+            handler = {(action:UIAlertAction!) in }
         }
+        
+        let alertConfirm = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: handler)
         alertController.addAction(alertConfirm)
         presentViewController(alertController, animated: true, completion: nil)
     }
@@ -53,7 +61,7 @@ class SignUpViewController: UIViewController {
     
     @IBAction func gotoLogin(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion: nil)
-        }
+    }
     
     /*
     

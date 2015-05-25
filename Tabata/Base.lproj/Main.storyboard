@@ -123,7 +123,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T76-8O-Fr6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1986" y="389"/>
+            <point key="canvasLocation" x="-1930" y="1123"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="ZJS-qS-Ud9">
@@ -225,7 +225,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tabata" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kco-2T-KNK">
-                                <rect key="frame" x="245" y="28" width="111" height="45.5"/>
+                                <rect key="frame" x="245" y="28" width="111" height="46"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="111" id="bI8-vU-R2q"/>
                                 </constraints>
@@ -312,13 +312,13 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="totalCycle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gOF-QK-gWG">
-                                <rect key="frame" x="252" y="603" width="77" height="20.5"/>
+                                <rect key="frame" x="252" y="603" width="77" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Set" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hun-AH-gVQ">
-                                <rect key="frame" x="57" y="456" width="26" height="20.5"/>
+                                <rect key="frame" x="57" y="456" width="26" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -356,15 +356,15 @@
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="OPS-kt-Ghg"/>
-                                <exclude reference="PXh-0H-AlF"/>
-                                <exclude reference="cfJ-1h-VKW"/>
                                 <exclude reference="0b7-Pp-dk0"/>
                                 <exclude reference="B2X-V2-S0s"/>
                                 <exclude reference="H1B-VD-aDN"/>
                                 <exclude reference="NQU-vX-JeT"/>
                                 <exclude reference="cPl-U9-65z"/>
                                 <exclude reference="pYL-NT-dwr"/>
+                                <exclude reference="OPS-kt-Ghg"/>
+                                <exclude reference="PXh-0H-AlF"/>
+                                <exclude reference="cfJ-1h-VKW"/>
                                 <exclude reference="Pks-nA-Fsm"/>
                                 <exclude reference="fio-1P-90j"/>
                                 <exclude reference="sdX-UK-658"/>
