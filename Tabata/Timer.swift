@@ -33,17 +33,21 @@ public class Timer {
     weak var circleProgressBar: CircleProgressView!
     weak var timerLabel: UILabel!
     weak var currentCycleLabel: UILabel!
+    weak var backdropWork: UIImageView!
+    weak var backdropRest: UIImageView!
     var player : AVAudioPlayer!
     var startTime = NSTimeInterval()
     
     private var exerciseInfo: ExcerciseInfo!
     
-    public init(counter: Double, cycle: Int, restTime: Double, circleProgressBar: CircleProgressView, timerLabel: UILabel?, currentCycleLabel: UILabel?){
+    public init(counter: Double, cycle: Int, restTime: Double, circleProgressBar: CircleProgressView, timerLabel: UILabel?, currentCycleLabel: UILabel?, backdropWork: UIImageView?, backdropRest: UIImageView?){
         self.startTime = NSDate.timeIntervalSinceReferenceDate()
         self.exerciseInfo = ExcerciseInfo(exeTime: counter, cycle: cycle, restTime: restTime, mode: 0)
         self.circleProgressBar = circleProgressBar
         self.timerLabel = timerLabel
         self.currentCycleLabel = currentCycleLabel
+        self.backdropWork = backdropWork
+        self.backdropRest = backdropRest
     }
     
     /**
@@ -101,8 +105,20 @@ public class Timer {
                 if (exerciseInfo.mode == 0){
                     exerciseInfo.cycle  = exerciseInfo.cycle - 1
                     exerciseInfo.mode = 1
+                    backdropWork.hidden = true
+                    backdropRest.hidden = false
+                    timerLabel.textColor = .greenColor()
+                    currentCycleLabel.textColor = .greenColor()
+                    circleProgressBar.trackFillColor = .greenColor()
+                    circleProgressBar.trackBackgroundColor = UIColor.greenColor().colorWithAlphaComponent(0.5)
                 } else {
                     exerciseInfo.mode = 0
+                    backdropRest.hidden = true
+                    backdropWork.hidden = false
+                    timerLabel.textColor = .orangeColor()
+                    currentCycleLabel.textColor = .orangeColor()
+                    circleProgressBar.trackFillColor = .orangeColor()
+                    circleProgressBar.trackBackgroundColor = UIColor.orangeColor().colorWithAlphaComponent(0.5)
                 }
                 self.startTime = NSDate.timeIntervalSinceReferenceDate()
                 NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: "timerDecrement", userInfo: nil, repeats: false)

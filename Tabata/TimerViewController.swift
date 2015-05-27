@@ -15,6 +15,8 @@ class TimerViewController: UIViewController {
     @IBOutlet weak var startButton: UIButton!
     @IBOutlet weak var currentCycleLabel: UILabel!
     @IBOutlet weak var totalCyclesLabel: UILabel!
+    @IBOutlet weak var backdropWork: UIImageView!
+    @IBOutlet weak var backdropRest: UIImageView!
     
     var timerLabel: UILabel!
     var countingTimer: Timer!
@@ -31,7 +33,7 @@ class TimerViewController: UIViewController {
         timerLabel.textColor = UIColor.orangeColor()
         
         //initializing countdown timer
-        countingTimer = Timer(counter: exeSetting.exeTime,  cycle: exeSetting.cycle, restTime: exeSetting.restTime, circleProgressBar: circleProgressBar, timerLabel: timerLabel, currentCycleLabel: currentCycleLabel)
+        countingTimer = Timer(counter: exeSetting.exeTime,  cycle: exeSetting.cycle, restTime: exeSetting.restTime, circleProgressBar: circleProgressBar, timerLabel: timerLabel, currentCycleLabel: currentCycleLabel, backdropWork:backdropWork, backdropRest: backdropRest)
         
         totalCyclesLabel.text = String(exeSetting.cycle)
         
