@@ -75,11 +75,11 @@ class SignUpViewController: UIViewController {
     }
     
     override func shouldAutorotate() -> Bool {
-        return false
+        return true
     }
     
     override func supportedInterfaceOrientations() -> Int {
-        return UIInterfaceOrientation.Portrait.rawValue
+        return Int(UIInterfaceOrientationMask.Portrait.rawValue)
     }
     
     /*
