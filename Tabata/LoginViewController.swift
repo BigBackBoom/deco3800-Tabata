@@ -36,6 +36,10 @@ class LoginViewController: UIViewController {
         }
     }
     
+    @IBAction func dismissKeyboard() {
+        view.endEditing(true)
+    }
+    
     /*
     // MARK: - Navigation
     

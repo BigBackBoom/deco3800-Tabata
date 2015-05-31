@@ -63,6 +63,10 @@ class SignUpViewController: UIViewController {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
+    @IBAction func dismissKeyboard() {
+        view.endEditing(true)
+    }
+    
     /*
     
     // MARK: - Navigation

@@ -82,6 +82,7 @@
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="eqs-bD-S4d" firstAttribute="top" secondItem="INZ-NT-kxi" secondAttribute="bottom" constant="36" id="0vd-Ig-dvb"/>
                             <constraint firstAttribute="centerX" secondItem="bif-f5-gO0" secondAttribute="centerX" id="4eh-en-uUD"/>
@@ -114,6 +115,9 @@
                                 <exclude reference="agi-OK-7Mc"/>
                             </mask>
                         </variation>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="wCe-jJ-RM0" appends="YES" id="tRU-IG-CZf"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="txtEmail" destination="iVU-ad-rdk" id="eY9-xR-56b"/>
@@ -122,6 +126,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T76-8O-Fr6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="wCe-jJ-RM0">
+                    <connections>
+                        <action selector="dismissKeyboard" destination="5mN-VH-7eT" id="ugB-Ux-ntg"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-1930" y="1123"/>
         </scene>
@@ -190,6 +199,7 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="tEW-Ex-0ou" secondAttribute="centerX" constant="-0.5" id="3dD-05-uJJ"/>
                             <constraint firstAttribute="centerX" secondItem="7mA-SN-zXh" secondAttribute="centerX" constant="-0.5" id="AuN-vf-EU1"/>
@@ -202,6 +212,9 @@
                             <constraint firstItem="nrf-OE-eAN" firstAttribute="top" secondItem="cSc-RR-6P7" secondAttribute="bottom" constant="67" id="g91-Mw-wfM"/>
                             <constraint firstAttribute="centerX" secondItem="nrf-OE-eAN" secondAttribute="centerX" id="plN-8s-v9k"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="nDC-xl-Ihf" appends="YES" id="N2V-Rd-hmL"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="txtPassword" destination="cSc-RR-6P7" id="DPG-nw-m5O"/>
@@ -209,6 +222,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f2L-Le-XwT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="nDC-xl-Ihf">
+                    <connections>
+                        <action selector="dismissKeyboard" destination="mlV-wR-KJs" id="VfZ-QS-dHq"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-1077" y="389"/>
         </scene>
@@ -310,7 +328,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Set" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hun-AH-gVQ">
-                                <rect key="frame" x="50" y="559" width="26" height="20.5"/>
+                                <rect key="frame" x="50" y="559" width="26" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="26" id="0Hg-is-jra"/>
                                     <constraint firstAttribute="height" constant="20.5" id="LpV-HW-93r"/>
@@ -348,7 +366,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="totalCycle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gOF-QK-gWG">
-                                <rect key="frame" x="256" y="707" width="77" height="20.5"/>
+                                <rect key="frame" x="256" y="707" width="77" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
