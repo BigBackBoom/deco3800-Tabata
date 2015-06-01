@@ -17,6 +17,8 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         var tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "DismissKeyboard")
         view.addGestureRecognizer(tap)
+        txtUsername.autocorrectionType = UITextAutocorrectionType.No
+        txtPassword.autocorrectionType = UITextAutocorrectionType.No
     }
     
     func DismissKeyboard(){

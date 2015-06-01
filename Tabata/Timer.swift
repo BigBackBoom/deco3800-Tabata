@@ -96,6 +96,20 @@ public class Timer {
         timerLabel.text = "0:\(strMinutes)" // first zero is a fake
         currentCycleLabel.text = String(exerciseInfo.cycle)
         
+        func colorize (redIn: Int, greenIn:Int, blueIn:Int, alpha: Double = 1.0) -> UIColor {
+            
+            let red = Double(redIn) / 255.0
+            
+            let green = Double(greenIn) / 255.0
+            
+            let blue = Double(blueIn) / 255.0
+            
+            var color: UIColor = UIColor( red: CGFloat(red), green: CGFloat(green), blue: CGFloat(blue), alpha:CGFloat(alpha) )
+            
+            return color
+            
+        }
+        
         if(exerciseInfo.cycle > 0){
             //if a counter still have remaining time, coundown go on
             if(counter > 0){
@@ -107,18 +121,18 @@ public class Timer {
                     exerciseInfo.mode = 1
                     backdropWork.hidden = true
                     backdropRest.hidden = false
-                    timerLabel.textColor = .greenColor()
-                    currentCycleLabel.textColor = .greenColor()
-                    circleProgressBar.trackFillColor = .greenColor()
-                    circleProgressBar.trackBackgroundColor = UIColor.greenColor().colorWithAlphaComponent(0.5)
+                    timerLabel.textColor = colorize(0,170,68, alpha:1.0)
+                    currentCycleLabel.textColor = colorize(0,170,68, alpha:1.0)
+                    circleProgressBar.trackFillColor = colorize(0,170,68, alpha:1.0)
+                    circleProgressBar.trackBackgroundColor = colorize(0,170,68, alpha:1.0).colorWithAlphaComponent(0.5)
                 } else {
                     exerciseInfo.mode = 0
                     backdropRest.hidden = true
                     backdropWork.hidden = false
-                    timerLabel.textColor = .orangeColor()
-                    currentCycleLabel.textColor = .orangeColor()
-                    circleProgressBar.trackFillColor = .orangeColor()
-                    circleProgressBar.trackBackgroundColor = UIColor.orangeColor().colorWithAlphaComponent(0.5)
+                    timerLabel.textColor = colorize(224,79,14, alpha:1.0)
+                    currentCycleLabel.textColor = colorize(224,79,14, alpha:1.0)
+                    circleProgressBar.trackFillColor = colorize(224,79,14, alpha:1.0)
+                    circleProgressBar.trackBackgroundColor = colorize(224,79,14, alpha:1.0).colorWithAlphaComponent(0.5)
                 }
                 self.startTime = NSDate.timeIntervalSinceReferenceDate()
                 NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: "timerDecrement", userInfo: nil, repeats: false)

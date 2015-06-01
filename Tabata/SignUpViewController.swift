@@ -26,6 +26,9 @@ class SignUpViewController: UIViewController {
         super.viewDidLoad()
         var tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "DismissKeyboard")
         view.addGestureRecognizer(tap)
+        txtUsername.autocorrectionType = UITextAutocorrectionType.No
+        txtPassword.autocorrectionType = UITextAutocorrectionType.No
+        txtEmail.autocorrectionType = UITextAutocorrectionType.No
         // Do any additional setup after loading the view. hahaha dumb ass
     }
     

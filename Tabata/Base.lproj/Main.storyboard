@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="XsM-Fb-7OS">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="mlV-wR-KJs">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -239,11 +239,11 @@
                         <viewControllerLayoutGuide type="bottom" id="d7e-Z5-ZaJ"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="NVb-nG-AKk">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tabata" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kco-2T-KNK">
-                                <rect key="frame" x="152" y="28" width="111" height="45.5"/>
+                                <rect key="frame" x="245" y="28" width="111" height="45.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="111" id="bI8-vU-R2q"/>
                                 </constraints>
@@ -257,7 +257,7 @@
                                 </variation>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k3M-b6-ztH">
-                                <rect key="frame" x="335" y="698" width="49" height="30"/>
+                                <rect key="frame" x="521" y="562" width="49" height="30"/>
                                 <state key="normal" title="Setting">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -266,7 +266,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b3z-QG-V8i">
-                                <rect key="frame" x="57" y="150" width="300" height="300"/>
+                                <rect key="frame" x="150" y="150" width="300" height="300"/>
                                 <accessibility key="accessibilityConfiguration" label="starExercise"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="300" id="Q4q-Th-MsI"/>
@@ -439,16 +439,6 @@
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="0b7-Pp-dk0"/>
-                                <exclude reference="B2X-V2-S0s"/>
-                                <exclude reference="H1B-VD-aDN"/>
-                                <exclude reference="NQU-vX-JeT"/>
-                                <exclude reference="QtF-a3-v07"/>
-                                <exclude reference="Y4H-ly-rEN"/>
-                                <exclude reference="cPl-U9-65z"/>
-                                <exclude reference="fW0-RD-WqM"/>
-                                <exclude reference="hBJ-YC-r3C"/>
-                                <exclude reference="pYL-NT-dwr"/>
                                 <exclude reference="1xF-nA-Sgj"/>
                                 <exclude reference="3FE-Za-aWu"/>
                                 <exclude reference="Nad-ht-x8U"/>
@@ -463,12 +453,16 @@
                                 <exclude reference="iyb-m6-d8F"/>
                                 <exclude reference="kuD-5J-J0b"/>
                                 <exclude reference="wWi-bN-06X"/>
-                                <exclude reference="4SE-VL-i5g"/>
-                                <exclude reference="Cmp-W7-ZTs"/>
-                                <exclude reference="adJ-1E-lUB"/>
-                                <exclude reference="bqC-O9-xX9"/>
-                                <exclude reference="tGH-ko-bhY"/>
-                                <exclude reference="uWM-hx-SFW"/>
+                                <exclude reference="0b7-Pp-dk0"/>
+                                <exclude reference="B2X-V2-S0s"/>
+                                <exclude reference="H1B-VD-aDN"/>
+                                <exclude reference="NQU-vX-JeT"/>
+                                <exclude reference="QtF-a3-v07"/>
+                                <exclude reference="Y4H-ly-rEN"/>
+                                <exclude reference="cPl-U9-65z"/>
+                                <exclude reference="fW0-RD-WqM"/>
+                                <exclude reference="hBJ-YC-r3C"/>
+                                <exclude reference="pYL-NT-dwr"/>
                                 <exclude reference="9GF-3Z-faD"/>
                                 <exclude reference="MRD-3G-EHl"/>
                                 <exclude reference="Pks-nA-Fsm"/>
@@ -480,6 +474,12 @@
                                 <exclude reference="sdX-UK-658"/>
                                 <exclude reference="ske-oH-EG6"/>
                                 <exclude reference="uKw-Rp-7pB"/>
+                                <exclude reference="4SE-VL-i5g"/>
+                                <exclude reference="Cmp-W7-ZTs"/>
+                                <exclude reference="adJ-1E-lUB"/>
+                                <exclude reference="bqC-O9-xX9"/>
+                                <exclude reference="tGH-ko-bhY"/>
+                                <exclude reference="uWM-hx-SFW"/>
                             </mask>
                         </variation>
                     </view>
@@ -661,6 +661,6 @@
         <image name="tabataBtm3" width="1098" height="518"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="M2r-kL-2Pk"/>
+        <segue reference="8A7-Bh-eTM"/>
     </inferredMetricsTieBreakers>
 </document>
