@@ -23,11 +23,17 @@ Count Down Timer Initialized
 
 public class Timer {
     
+    private enum exerciseMode:Int {
+        case Exercise = 0
+        case Rest
+        case Finished
+    }
+    
     private struct ExcerciseInfo {
         var exeTime: Double!
         var cycle: Int!
         var restTime:Double!
-        var mode:Int
+        var mode:exerciseMode
     }
     
     weak var circleProgressBar: CircleProgressView!
@@ -43,7 +49,7 @@ public class Timer {
     
     public init(counter: Double, cycle: Int, restTime: Double, circleProgressBar: CircleProgressView, timerLabel: UILabel?, currentCycleLabel: UILabel?, backdropWork: UIImageView?, backdropRest: UIImageView?){
         self.startTime = NSDate.timeIntervalSinceReferenceDate()
-        self.exerciseInfo = ExcerciseInfo(exeTime: counter, cycle: cycle, restTime: restTime, mode: 0)
+        self.exerciseInfo = ExcerciseInfo(exeTime: counter, cycle: cycle, restTime: restTime, mode: .Exercise)
         self.circleProgressBar = circleProgressBar
         self.timerLabel = timerLabel
         self.currentCycleLabel = currentCycleLabel
@@ -82,10 +88,10 @@ public class Timer {
         var elapsedTime = currentTime - startTime
         
         //calculate amount of time left
-        var counter = exerciseInfo.mode == 0 ? exerciseInfo.exeTime - elapsedTime : exerciseInfo.restTime - elapsedTime
+        var counter = exerciseInfo.mode == .Exercise ? exerciseInfo.exeTime - elapsedTime : exerciseInfo.restTime - elapsedTime
         
         //update circular progress bar
-        if (exerciseInfo.mode == 0) {
+        if (exerciseInfo.mode == .Exercise) {
             circleProgressBar.progress = 1 - (Double(counter)/Double(exerciseInfo.exeTime))
         } else {
             circleProgressBar.progress = 1 - (Double(counter)/Double(exerciseInfo.restTime))
@@ -119,28 +125,27 @@ public class Timer {
                 NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: "timerDecrement", userInfo: nil, repeats: false)
             } else {
                 //check mode of timer and decide whether going into exercise or rest
-                if (exerciseInfo.mode == 0){
+                if (exerciseInfo.mode == .Exercise){
                     exerciseInfo.cycle  = exerciseInfo.cycle - 1
-                    exerciseInfo.mode = 1
+                    exerciseInfo.mode = exerciseInfo.cycle > 0 ? .Rest : .Finished
                     backdropWork.hidden = true
                     backdropRest.hidden = false
                     timerLabel.textColor = colorize(0,170,68, alpha:1.0)
                     currentCycleLabel.textColor = colorize(0,170,68, alpha:1.0)
                     circleProgressBar.trackFillColor = colorize(0,170,68, alpha:1.0)
                     circleProgressBar.trackBackgroundColor = colorize(0,170,68, alpha:1.0).colorWithAlphaComponent(0.5)
-                    player = AVAudioPlayer(contentsOfURL:
-                        exerciseInfo.cycle > 0 ? soundUrls[exerciseInfo.mode]: soundUrls[2], error: nil)
+                    player = AVAudioPlayer(contentsOfURL: soundUrls[exerciseInfo.mode.rawValue], error: nil)
                     player.prepareToPlay()
                     player.play()
                 } else {
-                    exerciseInfo.mode = 0
+                    exerciseInfo.mode = .Exercise
                     backdropRest.hidden = true
                     backdropWork.hidden = false
                     timerLabel.textColor = colorize(224,79,14, alpha:1.0)
                     currentCycleLabel.textColor = colorize(224,79,14, alpha:1.0)
                     circleProgressBar.trackFillColor = colorize(224,79,14, alpha:1.0)
                     circleProgressBar.trackBackgroundColor = colorize(224,79,14, alpha:1.0).colorWithAlphaComponent(0.5)
-                    player = AVAudioPlayer(contentsOfURL: soundUrls[exerciseInfo.mode], error: nil)
+                    player = AVAudioPlayer(contentsOfURL: soundUrls[exerciseInfo.mode.rawValue], error: nil)
                     player.prepareToPlay()
                     player.play()
                 }
