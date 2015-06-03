@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4D5394541B1F01D5008ECDA3 /* exeStart.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 4D5394531B1F01D5008ECDA3 /* exeStart.m4a */; };
+		4D5394571B1F083E008ECDA3 /* rest.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 4D5394561B1F083E008ECDA3 /* rest.m4a */; };
+		4D5394591B1F0CC7008ECDA3 /* finished.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 4D5394581B1F0CC7008ECDA3 /* finished.m4a */; };
 		4D594E591B072E9300F3316A /* DatabaseCommsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D594E581B072E9300F3316A /* DatabaseCommsTests.swift */; };
 		4D5DC1D41B03683700404427 /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5DC1D31B03683700404427 /* SettingTableViewController.swift */; };
 		4D63C6B11B0460A0003E94D8 /* TimerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D63C6B01B0460A0003E94D8 /* TimerTests.swift */; };
@@ -44,6 +47,9 @@
 		1B8CB0D602B007B256C143B8 /* Pods-Tabata.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tabata.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tabata/Pods-Tabata.release.xcconfig"; sourceTree = "<group>"; };
 		2935AE491EC6C8DBBF01C058 /* libPods-Tabata.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Tabata.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D32A5D51AFB43F00030DDED /* Tabata-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tabata-Bridging-Header.h"; sourceTree = "<group>"; };
+		4D5394531B1F01D5008ECDA3 /* exeStart.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = exeStart.m4a; sourceTree = "<group>"; };
+		4D5394561B1F083E008ECDA3 /* rest.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = rest.m4a; sourceTree = "<group>"; };
+		4D5394581B1F0CC7008ECDA3 /* finished.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = finished.m4a; sourceTree = "<group>"; };
 		4D594E581B072E9300F3316A /* DatabaseCommsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseCommsTests.swift; sourceTree = "<group>"; };
 		4D5DC1D31B03683700404427 /* SettingTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingTableViewController.swift; sourceTree = "<group>"; };
 		4D63C6B01B0460A0003E94D8 /* TimerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerTests.swift; sourceTree = "<group>"; };
@@ -136,6 +142,9 @@
 		4DE3EE0E1ABA349000D7B6B2 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				4D5394581B1F0CC7008ECDA3 /* finished.m4a */,
+				4D5394561B1F083E008ECDA3 /* rest.m4a */,
+				4D5394531B1F01D5008ECDA3 /* exeStart.m4a */,
 				4DDEF2541AE8594D00C07AA8 /* timlim.mp3 */,
 				4DE3EE0F1ABA349000D7B6B2 /* Info.plist */,
 			);
@@ -266,9 +275,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D5394541B1F01D5008ECDA3 /* exeStart.m4a in Resources */,
 				4DDEF2551AE8594D00C07AA8 /* timlim.mp3 in Resources */,
 				4DE3EE161ABA349000D7B6B2 /* Main.storyboard in Resources */,
 				4DE3EE1B1ABA349000D7B6B2 /* LaunchScreen.xib in Resources */,
+				4D5394591B1F0CC7008ECDA3 /* finished.m4a in Resources */,
+				4D5394571B1F083E008ECDA3 /* rest.m4a in Resources */,
 				4DE3EE181ABA349000D7B6B2 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

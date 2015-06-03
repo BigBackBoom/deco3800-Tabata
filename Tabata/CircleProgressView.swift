@@ -46,7 +46,7 @@ import UIKit
         didSet { setNeedsDisplay() }
     }
 
-    @IBInspectable public var trackFillColor: UIColor = UIColor.orangeColor() {
+    @IBInspectable public var trackFillColor: UIColor = UIColor(red:224,green:79,blue:14,alpha:1.0) {
         didSet { setNeedsDisplay() }
     }
 

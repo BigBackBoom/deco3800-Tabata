@@ -30,7 +30,7 @@ class TimerViewController: UIViewController {
         timerLabel.center = CGPointMake(circleProgressBar.frame.width/2, circleProgressBar.frame.height/2)
         timerLabel.textAlignment = NSTextAlignment.Center
         timerLabel.font = UIFont(name: timerLabel.font.fontName, size: 80)
-        timerLabel.textColor = UIColor.orangeColor()
+        timerLabel.textColor = UIColor(red: 224/255, green: 79/255, blue: 14/255, alpha: 1.0)
         
         //initializing countdown timer
         countingTimer = Timer(counter: exeSetting.exeTime,  cycle: exeSetting.cycle, restTime: exeSetting.restTime, circleProgressBar: circleProgressBar, timerLabel: timerLabel, currentCycleLabel: currentCycleLabel, backdropWork:backdropWork, backdropRest: backdropRest)

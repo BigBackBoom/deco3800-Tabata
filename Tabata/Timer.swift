@@ -37,6 +37,7 @@ public class Timer {
     weak var backdropRest: UIImageView!
     var player : AVAudioPlayer!
     var startTime = NSTimeInterval()
+    var soundUrls:[NSURL] = []
     
     private var exerciseInfo: ExcerciseInfo!
     
@@ -48,6 +49,8 @@ public class Timer {
         self.currentCycleLabel = currentCycleLabel
         self.backdropWork = backdropWork
         self.backdropRest = backdropRest
+        
+        soundSetUp()
     }
     
     /**
@@ -125,6 +128,10 @@ public class Timer {
                     currentCycleLabel.textColor = colorize(0,170,68, alpha:1.0)
                     circleProgressBar.trackFillColor = colorize(0,170,68, alpha:1.0)
                     circleProgressBar.trackBackgroundColor = colorize(0,170,68, alpha:1.0).colorWithAlphaComponent(0.5)
+                    player = AVAudioPlayer(contentsOfURL:
+                        exerciseInfo.cycle > 0 ? soundUrls[exerciseInfo.mode]: soundUrls[2], error: nil)
+                    player.prepareToPlay()
+                    player.play()
                 } else {
                     exerciseInfo.mode = 0
                     backdropRest.hidden = true
@@ -133,6 +140,9 @@ public class Timer {
                     currentCycleLabel.textColor = colorize(224,79,14, alpha:1.0)
                     circleProgressBar.trackFillColor = colorize(224,79,14, alpha:1.0)
                     circleProgressBar.trackBackgroundColor = colorize(224,79,14, alpha:1.0).colorWithAlphaComponent(0.5)
+                    player = AVAudioPlayer(contentsOfURL: soundUrls[exerciseInfo.mode], error: nil)
+                    player.prepareToPlay()
+                    player.play()
                 }
                 self.startTime = NSDate.timeIntervalSinceReferenceDate()
                 NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: "timerDecrement", userInfo: nil, repeats: false)
@@ -146,6 +156,16 @@ public class Timer {
         
     }
     
+    private func soundSetUp(){
+        let filename = ["exeStart", "rest", "finished"]
+        
+        for name in filename{
+            var fileString = NSBundle.mainBundle().pathForResource(name, ofType: "m4a")
+            var url = NSURL(fileURLWithPath: fileString!)
+            soundUrls.append(url!)
+        }
+    }
+    
     /**
         This function triggers countdown timer.
         Codes will delete timerpicker interface and replace with countdown label.
@@ -154,15 +174,9 @@ public class Timer {
     */
     
     public func startTimer(){
-        
-        //audio Test
-        let fileString = NSBundle.mainBundle().pathForResource("timlim", ofType: "mp3")
-        let url = NSURL(fileURLWithPath: fileString!)
-        player = AVAudioPlayer(contentsOfURL: url, error: nil)
+        player = AVAudioPlayer(contentsOfURL: soundUrls[0], error: nil)
         player.prepareToPlay()
         player.play()
-        /****************************************************************************************/
-        
         
         //start timer
         NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: "timerDecrement", userInfo: nil, repeats: false)
