@@ -2,7 +2,7 @@
 //  Created by Kodai Kikuchi on 2015/03/19.
 //  Copyright (c) 2015年 deco3800. All rights reserved.
 //
-/*
+
 
 import UIKit
 import XCTest
@@ -17,8 +17,8 @@ class TimerTests: XCTestCase {
     override func setUp() {
         super.setUp()
         
-        //initializing countdown timer
-        countingTimer = Timer(counter: 40.0,  cycle: 4, restTime: 10, circleProgressBar: circleProgressBar, timerLabel: timerLabel)
+        //initializing countdown time
+        countingTimer = Timer(counter: 40.0,  cycle: 4, restTime: 10, circleProgressBar: circleProgressBar, timerLabel: nil, currentCycleLabel: nil, backdropWork:nil, backdropRest: nil)
     }
     
     override func tearDown() {
@@ -43,4 +43,3 @@ class TimerTests: XCTestCase {
     }
     
 }
-*/

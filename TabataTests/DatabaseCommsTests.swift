@@ -23,7 +23,7 @@ class DatabaseCommsTests: XCTestCase {
         //Testing that login:: function return false
         XCTAssert(!login(username, password), "The reult need to be false")
         
-        username = "testtest"
+        username = "kodai"
         password = "1234"
         //Testing login:: returns true
         XCTAssert(login(username, password), "The reult need to be true")
